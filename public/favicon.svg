@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="flutterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00D2FF"/>
+      <stop offset="100%" style="stop-color:#3A7BD5"/>
+    </linearGradient>
+  </defs>
+  <circle cx="32" cy="32" r="30" fill="url(#flutterGrad)"/>
+  <path d="M36 18L24 30l6 6 18-18H36zm0 16l-6 6 6 6h12l-6-6 6-6H36z" fill="white"/>
+</svg>
