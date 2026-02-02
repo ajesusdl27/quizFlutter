@@ -302,5 +302,402 @@ export const preguntasUnidad6: Pregunta[] = [
     correcta: 1,
     explicacion: "Dart/Flutter recomienda snake_case para nombres de archivos: user_profile_screen.dart",
     categoria: "Organización"
+  },
+
+  // Sensores (7 preguntas nuevas)
+  {
+    id: 26,
+    pregunta: "¿Qué paquete se usa comúnmente para acceder a sensores en Flutter?",
+    opciones: ["flutter_sensors", "sensors", "sensors_plus", "device_sensors"],
+    correcta: 2,
+    explicacion: "sensors_plus proporciona acceso a acelerómetro, giroscopio y magnetómetro del dispositivo.",
+    categoria: "Sensores"
+  },
+  {
+    id: 27,
+    pregunta: "¿Qué sensor mide la aceleración del dispositivo incluyendo la gravedad?",
+    opciones: ["Giroscopio", "Acelerómetro", "Magnetómetro", "GPS"],
+    correcta: 1,
+    explicacion: "El acelerómetro mide aceleración en los ejes X, Y, Z. Detecta movimiento, inclinación y sacudidas.",
+    categoria: "Sensores"
+  },
+  {
+    id: 28,
+    pregunta: "¿Qué sensor mide la rotación angular del dispositivo?",
+    opciones: ["Acelerómetro", "Giroscopio", "Brújula", "Inclinómetro"],
+    correcta: 1,
+    explicacion: "El giroscopio mide velocidad angular (rotación) en los tres ejes, útil para controles de juegos.",
+    categoria: "Sensores"
+  },
+  {
+    id: 29,
+    pregunta: "¿Qué sensor se usa para detectar la orientación magnética (brújula)?",
+    opciones: ["Acelerómetro", "Giroscopio", "Magnetómetro", "Orientómetro"],
+    correcta: 2,
+    explicacion: "El magnetómetro detecta el campo magnético terrestre, permitiendo determinar el norte magnético.",
+    categoria: "Sensores"
+  },
+  {
+    id: 30,
+    pregunta: "¿Cómo se escuchan los eventos del acelerómetro?",
+    opciones: [
+      "accelerometer.listen()",
+      "accelerometerEvents.listen((event) => ...)",
+      "Accelerometer.stream()",
+      "getAccelerometer()"
+    ],
+    correcta: 1,
+    explicacion: "accelerometerEvents es un Stream que emite eventos AccelerometerEvent con valores x, y, z.",
+    categoria: "Sensores"
+  },
+  {
+    id: 31,
+    pregunta: "¿Qué paquete proporciona retroalimentación háptica (vibración)?",
+    opciones: ["haptic", "vibration", "HapticFeedback (de Flutter)", "flutter_vibrate"],
+    correcta: 2,
+    explicacion: "HapticFeedback.vibrate() o HapticFeedback.heavyImpact() de Flutter proporciona vibración.",
+    categoria: "Sensores"
+  },
+  {
+    id: 32,
+    pregunta: "¿Para qué se usan los sensores en aplicaciones Flutter?",
+    opciones: [
+      "Solo para juegos",
+      "Para juegos, fitness tracking, realidad aumentada, detección de gestos",
+      "No se pueden usar",
+      "Solo para debugging"
+    ],
+    correcta: 1,
+    explicacion: "Sensores permiten juegos con controles de inclinación, apps fitness, AR, contadores de pasos, etc.",
+    categoria: "Sensores"
+  },
+
+  // Cámara (6 preguntas nuevas)
+  {
+    id: 33,
+    pregunta: "¿Qué paquete se usa comúnmente para acceder a la cámara?",
+    opciones: ["flutter_camera", "camera", "image_picker", "Ambas B y C"],
+    correcta: 3,
+    explicacion: "camera permite control completo de la cámara. image_picker captura fotos/videos de forma simple.",
+    categoria: "Cámara"
+  },
+  {
+    id: 34,
+    pregunta: "¿Qué widget del paquete camera muestra la vista previa de la cámara?",
+    opciones: ["CameraView", "CameraPreview", "CameraWidget", "VideoView"],
+    correcta: 1,
+    explicacion: "CameraPreview(controller) muestra el feed en vivo de la cámara.",
+    categoria: "Cámara"
+  },
+  {
+    id: 35,
+    pregunta: "¿Qué permisos necesita Android para usar la cámara?",
+    opciones: [
+      "CAMERA en AndroidManifest.xml",
+      "No necesita permisos",
+      "Solo para grabar video",
+      "Se piden automáticamente"
+    ],
+    correcta: 0,
+    explicacion: "Debe declararse <uses-permission android:name='android.permission.CAMERA'/> y pedirse en runtime.",
+    categoria: "Cámara"
+  },
+  {
+    id: 36,
+    pregunta: "¿Qué hace CameraController?",
+    opciones: [
+      "Controla el brillo de la pantalla",
+      "Inicializa y controla la cámara (tomar foto, grabar video, zoom)",
+      "Gestiona permisos",
+      "Edita fotos"
+    ],
+    correcta: 1,
+    explicacion: "CameraController inicializa la cámara y proporciona métodos como takePicture() y startVideoRecording().",
+    categoria: "Cámara"
+  },
+  {
+    id: 37,
+    pregunta: "¿Cómo se selecciona entre cámara frontal y trasera?",
+    opciones: [
+      "No se puede cambiar",
+      "Especificando CameraLensDirection en availableCameras()",
+      "Automáticamente",
+      "Solo con ajustes del sistema"
+    ],
+    correcta: 1,
+    explicacion: "availableCameras() lista cámaras. Se filtra por lensDirection (front, back, external).",
+    categoria: "Cámara"
+  },
+  {
+    id: 38,
+    pregunta: "¿Qué paquete ayuda a pedir permisos en Flutter?",
+    opciones: ["permissions", "permission_handler", "flutter_permissions", "ask_permission"],
+    correcta: 1,
+    explicacion: "permission_handler maneja permisos de cámara, ubicación, micrófono, etc. en Android/iOS.",
+    categoria: "Cámara"
+  },
+
+  // Ubicación y GPS (7 preguntas nuevas)
+  {
+    id: 39,
+    pregunta: "¿Qué paquete se usa para acceder a la ubicación del dispositivo?",
+    opciones: ["flutter_location", "location", "geolocator", "Ambas B y C"],
+    correcta: 3,
+    explicacion: "geolocator y location son paquetes populares para obtener ubicación GPS del dispositivo.",
+    categoria: "Ubicación"
+  },
+  {
+    id: 40,
+    pregunta: "¿Qué permisos necesita Android para acceder a la ubicación?",
+    opciones: [
+      "GPS_PERMISSION",
+      "ACCESS_FINE_LOCATION y/o ACCESS_COARSE_LOCATION",
+      "LOCATION_ACCESS",
+      "No necesita permisos"
+    ],
+    correcta: 1,
+    explicacion: "ACCESS_FINE_LOCATION (precisa) o ACCESS_COARSE_LOCATION (aproximada) en AndroidManifest.xml.",
+    categoria: "Ubicación"
+  },
+  {
+    id: 41,
+    pregunta: "¿Qué método de geolocator obtiene la ubicación actual una vez?",
+    opciones: [
+      "getLocation()",
+      "Geolocator.getCurrentPosition()",
+      "getCurrentLocation()",
+      "fetchPosition()"
+    ],
+    correcta: 1,
+    explicacion: "Geolocator.getCurrentPosition() retorna un Future<Position> con latitud, longitud, etc.",
+    categoria: "Ubicación"
+  },
+  {
+    id: 42,
+    pregunta: "¿Cómo se escucha continuamente la ubicación del usuario?",
+    opciones: [
+      "Llamando getCurrentPosition() repetidamente",
+      "Geolocator.getPositionStream().listen()",
+      "No se puede escuchar continuamente",
+      "watchPosition()"
+    ],
+    correcta: 1,
+    explicacion: "getPositionStream() retorna un Stream que emite actualizaciones de ubicación continuamente.",
+    categoria: "Ubicación"
+  },
+  {
+    id: 43,
+    pregunta: "¿Qué información proporciona un objeto Position?",
+    opciones: [
+      "Solo latitud y longitud",
+      "Latitud, longitud, altitud, precisión, velocidad, rumbo",
+      "Solo coordenadas",
+      "Dirección postal"
+    ],
+    correcta: 1,
+    explicacion: "Position incluye latitude, longitude, altitude, accuracy, speed, heading y timestamp.",
+    categoria: "Ubicación"
+  },
+  {
+    id: 44,
+    pregunta: "¿Qué es geocoding?",
+    opciones: [
+      "Encriptar coordenadas",
+      "Convertir dirección a coordenadas o viceversa",
+      "Comprimir datos GPS",
+      "Validar coordenadas"
+    ],
+    correcta: 1,
+    explicacion: "Geocoding convierte direcciones a coordenadas. Reverse geocoding hace lo opuesto (coordenadas → dirección).",
+    categoria: "Ubicación"
+  },
+  {
+    id: 45,
+    pregunta: "¿Qué paquete se usa para mostrar mapas en Flutter?",
+    opciones: ["flutter_map", "google_maps_flutter", "maps", "Ambas A y B"],
+    correcta: 3,
+    explicacion: "google_maps_flutter usa Google Maps. flutter_map es alternativa open source con OpenStreetMap.",
+    categoria: "Ubicación"
+  },
+
+  // Voz y audio (5 preguntas nuevas)
+  {
+    id: 46,
+    pregunta: "¿Qué paquete convierte voz a texto (speech-to-text)?",
+    opciones: ["voice_recognition", "speech_to_text", "flutter_stt", "voice_to_text"],
+    correcta: 1,
+    explicacion: "speech_to_text permite transcribir audio del micrófono a texto en tiempo real.",
+    categoria: "Voz"
+  },
+  {
+    id: 47,
+    pregunta: "¿Qué paquete convierte texto a voz (text-to-speech)?",
+    opciones: ["text_to_speech", "flutter_tts", "voice_synthesis", "tts"],
+    correcta: 1,
+    explicacion: "flutter_tts lee texto en voz alta usando el motor TTS del sistema operativo.",
+    categoria: "Voz"
+  },
+  {
+    id: 48,
+    pregunta: "¿Qué permisos necesita Android para usar el micrófono?",
+    opciones: [
+      "AUDIO_PERMISSION",
+      "RECORD_AUDIO en AndroidManifest.xml",
+      "MICROPHONE",
+      "No necesita permisos"
+    ],
+    correcta: 1,
+    explicacion: "<uses-permission android:name='android.permission.RECORD_AUDIO'/> es necesario.",
+    categoria: "Voz"
+  },
+  {
+    id: 49,
+    pregunta: "¿Qué se puede hacer con speech_to_text?",
+    opciones: [
+      "Solo reconocer comandos simples",
+      "Transcribir voz a texto, detectar idiomas, reconocimiento continuo",
+      "Solo funciona en inglés",
+      "Sintetizar voz"
+    ],
+    correcta: 1,
+    explicacion: "speech_to_text permite transcripción continua, múltiples idiomas, resultados parciales y finales.",
+    categoria: "Voz"
+  },
+  {
+    id: 50,
+    pregunta: "¿Para qué aplicaciones son útiles las interfaces de voz?",
+    opciones: [
+      "Solo asistentes virtuales",
+      "Asistentes, accesibilidad, dictado, comandos manos libres, transcripción",
+      "Solo para personas con discapacidad",
+      "No son útiles en móviles"
+    ],
+    correcta: 1,
+    explicacion: "Interfaces de voz mejoran accesibilidad, permiten uso manos libres y aceleran entrada de texto.",
+    categoria: "Voz"
+  },
+
+  // Autenticación biométrica (5 preguntas nuevas)
+  {
+    id: 51,
+    pregunta: "¿Qué paquete proporciona autenticación biométrica?",
+    opciones: ["biometrics", "local_auth", "fingerprint", "face_id"],
+    correcta: 1,
+    explicacion: "local_auth permite autenticación con huella dactilar, Face ID, reconocimiento facial, etc.",
+    categoria: "Biometría"
+  },
+  {
+    id: 52,
+    pregunta: "¿Qué tipos de autenticación biométrica soporta Flutter?",
+    opciones: [
+      "Solo huella dactilar",
+      "Huella dactilar, Face ID, reconocimiento facial, iris",
+      "Solo Face ID",
+      "No soporta biometría"
+    ],
+    correcta: 1,
+    explicacion: "local_auth usa el sistema biométrico del dispositivo: Touch ID, Face ID, huella, reconocimiento facial.",
+    categoria: "Biometría"
+  },
+  {
+    id: 53,
+    pregunta: "¿Cómo se verifica si el dispositivo tiene biometría disponible?",
+    opciones: [
+      "No se puede verificar",
+      "LocalAuthentication().canCheckBiometrics",
+      "Biometrics.isAvailable()",
+      "hasBiometrics()"
+    ],
+    correcta: 1,
+    explicacion: "canCheckBiometrics retorna un Future<bool> indicando si hay hardware biométrico.",
+    categoria: "Biometría"
+  },
+  {
+    id: 54,
+    pregunta: "¿Qué método autentica al usuario con biometría?",
+    opciones: [
+      "authenticate()",
+      "localAuth.authenticate(localizedReason: 'motivo')",
+      "verifyBiometrics()",
+      "checkFingerprint()"
+    ],
+    correcta: 1,
+    explicacion: "authenticate() muestra el diálogo de biometría y retorna true si el usuario se autentica exitosamente.",
+    categoria: "Biometría"
+  },
+  {
+    id: 55,
+    pregunta: "¿Para qué se usa autenticación biométrica en apps?",
+    opciones: [
+      "Solo para bancos",
+      "Seguridad de login, confirmar pagos, desbloquear features sensibles",
+      "Solo para Face ID",
+      "No es segura"
+    ],
+    correcta: 1,
+    explicacion: "Biometría añade capa de seguridad para login, transacciones, acceso a datos privados, etc.",
+    categoria: "Biometría"
+  },
+
+  // Animaciones Hero avanzadas (5 preguntas nuevas)
+  {
+    id: 56,
+    pregunta: "¿Qué propiedad debe coincidir entre dos Hero widgets para animarse?",
+    opciones: ["id", "tag", "key", "name"],
+    correcta: 1,
+    explicacion: "El tag debe ser idéntico en ambas pantallas: Hero(tag: 'hero_image', child: ...)",
+    categoria: "Animaciones"
+  },
+  {
+    id: 57,
+    pregunta: "¿Cuándo se ejecuta la animación Hero?",
+    opciones: [
+      "Al construir la pantalla",
+      "Durante la transición de navegación entre dos pantallas",
+      "Al hacer tap",
+      "Solo en iOS"
+    ],
+    correcta: 1,
+    explicacion: "Hero se anima automáticamente cuando Navigator cambia entre pantallas que tienen Hero con mismo tag.",
+    categoria: "Animaciones"
+  },
+  {
+    id: 58,
+    pregunta: "¿Qué tipo de elementos se animan comúnmente con Hero?",
+    opciones: [
+      "Solo texto",
+      "Imágenes, íconos, avatares que aparecen en lista y detalle",
+      "Solo botones",
+      "No se pueden animar elementos"
+    ],
+    correcta: 1,
+    explicacion: "Hero es ideal para imágenes de productos, perfiles, etc. que van de lista a pantalla detalle.",
+    categoria: "Animaciones"
+  },
+  {
+    id: 59,
+    pregunta: "¿Se puede personalizar la curva de animación de Hero?",
+    opciones: [
+      "No, es fija",
+      "Sí, con createRectTween y flightShuttleBuilder",
+      "Solo en iOS",
+      "Solo la duración"
+    ],
+    correcta: 1,
+    explicacion: "Hero permite personalizar la trayectoria con createRectTween y el widget durante el vuelo con flightShuttleBuilder.",
+    categoria: "Animaciones"
+  },
+  {
+    id: 60,
+    pregunta: "¿Qué sucede si dos Hero tienen el mismo tag en la misma pantalla?",
+    opciones: [
+      "Se animan ambos",
+      "Se lanza una excepción en debug",
+      "Solo se anima el primero",
+      "No pasa nada"
+    ],
+    correcta: 1,
+    explicacion: "Flutter lanza una excepción porque cada tag debe ser único dentro de una ruta/pantalla.",
+    categoria: "Animaciones"
   }
 ];

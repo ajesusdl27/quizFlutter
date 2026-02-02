@@ -387,5 +387,337 @@ export const preguntasUnidad8: Pregunta[] = [
     correcta: 2,
     explicacion: "Se agrega factory MyClass.fromJson(Map<String, dynamic> json) => _$MyClassFromJson(json);",
     categoria: "Freezed"
+  },
+
+  // Dio avanzado e interceptores (6 preguntas nuevas)
+  {
+    id: 36,
+    pregunta: "¿Qué es un interceptor en Dio?",
+    opciones: [
+      "Un middleware que puede modificar peticiones y respuestas antes/después de enviarlas",
+      "Un bloqueador de peticiones",
+      "Un validador de datos",
+      "Un caché de peticiones"
+    ],
+    correcta: 0,
+    explicacion: "Los interceptores permiten interceptar requests/responses/errors para logging, autenticación, etc.",
+    categoria: "APIs REST"
+  },
+  {
+    id: 37,
+    pregunta: "¿Qué métodos tiene un interceptor de Dio?",
+    opciones: [
+      "before(), after()",
+      "onRequest(), onResponse(), onError()",
+      "intercept(), handle()",
+      "request(), response()"
+    ],
+    correcta: 1,
+    explicacion: "onRequest() modifica peticiones, onResponse() modifica respuestas, onError() maneja errores.",
+    categoria: "APIs REST"
+  },
+  {
+    id: 38,
+    pregunta: "¿Para qué sirve un interceptor de autenticación?",
+    opciones: [
+      "Validar usuarios",
+      "Añadir automáticamente el token de autenticación a todas las peticiones",
+      "Encriptar contraseñas",
+      "Crear sesiones"
+    ],
+    correcta: 1,
+    explicacion: "El interceptor añade el header Authorization automáticamente en onRequest() sin repetir código.",
+    categoria: "APIs REST"
+  },
+  {
+    id: 39,
+    pregunta: "¿Cómo se implementa retry automático en Dio con interceptores?",
+    opciones: [
+      "No se puede con interceptores",
+      "En onError(), verificar el error y reintentar con dio.fetch()",
+      "Con dio.retry()",
+      "Con el parámetro retryOnError"
+    ],
+    correcta: 1,
+    explicacion: "En onError() se puede verificar el tipo de error y reintentar la petición original con dio.fetch().",
+    categoria: "APIs REST"
+  },
+  {
+    id: 40,
+    pregunta: "¿Qué es el timeout en peticiones HTTP?",
+    opciones: [
+      "El tiempo de vida de un token",
+      "El tiempo máximo de espera antes de cancelar la petición",
+      "El tiempo entre peticiones",
+      "El tiempo de caché"
+    ],
+    correcta: 1,
+    explicacion: "timeout define cuánto esperar antes de considerar que la petición falló por tiempo de espera.",
+    categoria: "APIs REST"
+  },
+  {
+    id: 41,
+    pregunta: "¿Cómo se configura timeout en Dio?",
+    opciones: [
+      "dio.timeout = Duration(seconds: 30)",
+      "En BaseOptions: connectTimeout y receiveTimeout",
+      "dio.setTimeoutDuration()",
+      "En el header 'Timeout'"
+    ],
+    correcta: 1,
+    explicacion: "BaseOptions tiene connectTimeout (conectar) y receiveTimeout (recibir respuesta) en milisegundos.",
+    categoria: "APIs REST"
+  },
+
+  // Estrategias de caché y manejo de errores (5 preguntas nuevas)
+  {
+    id: 42,
+    pregunta: "¿Para qué sirve una estrategia cache-first?",
+    opciones: [
+      "Limpiar el caché primero",
+      "Mostrar datos del caché primero y luego actualizar con red",
+      "Solo usar caché",
+      "Priorizar velocidad sobre precisión"
+    ],
+    correcta: 1,
+    explicacion: "Cache-first muestra datos rápidos del caché mientras obtiene datos actualizados de la red en background.",
+    categoria: "APIs REST"
+  },
+  {
+    id: 43,
+    pregunta: "¿Qué paquete ayuda con caché de peticiones HTTP en Flutter?",
+    opciones: ["dio_cache", "dio_http_cache", "flutter_cache_manager", "Todos los anteriores"],
+    correcta: 3,
+    explicacion: "Hay varios paquetes: dio_cache_interceptor, flutter_cache_manager, hive para caché local.",
+    categoria: "APIs REST"
+  },
+  {
+    id: 44,
+    pregunta: "¿Qué estrategia maneja peticiones fallidas reintentándolas exponencialmente?",
+    opciones: [
+      "Linear retry",
+      "Exponential backoff",
+      "Immediate retry",
+      "Constant retry"
+    ],
+    correcta: 1,
+    explicacion: "Exponential backoff espera 1s, 2s, 4s, 8s... entre reintentos para no sobrecargar el servidor.",
+    categoria: "APIs REST"
+  },
+  {
+    id: 45,
+    pregunta: "¿Cómo se maneja el error de red sin conexión?",
+    opciones: [
+      "Ignorarlo",
+      "Mostrar mensaje y permitir reintentar cuando haya conexión",
+      "Cerrar la app",
+      "No se puede detectar"
+    ],
+    correcta: 1,
+    explicacion: "Se captura SocketException, se muestra UI offline y se puede usar connectivity_plus para detectar conexión.",
+    categoria: "APIs REST"
+  },
+  {
+    id: 46,
+    pregunta: "¿Qué patrón maneja diferentes estados de una petición (loading, success, error)?",
+    opciones: [
+      "State pattern",
+      "Result/Either pattern con sealed classes",
+      "Observer pattern",
+      "Factory pattern"
+    ],
+    correcta: 1,
+    explicacion: "Result<Success, Error> o Either<Left, Right> encapsulan los estados posibles de forma type-safe.",
+    categoria: "APIs REST"
+  },
+
+  // Firebase Firestore avanzado (5 preguntas nuevas)
+  {
+    id: 47,
+    pregunta: "¿Cómo se realiza una query compuesta en Firestore?",
+    opciones: [
+      "where().where().where()",
+      "Encadenando múltiples where(): collection.where('edad', isGreaterThan: 18).where('activo', isEqualTo: true)",
+      "No se pueden hacer queries compuestas",
+      "Con un SQL query"
+    ],
+    correcta: 1,
+    explicacion: "Se encadenan múltiples where() pero requiere índices compuestos en Firebase Console.",
+    categoria: "Firebase"
+  },
+  {
+    id: 48,
+    pregunta: "¿Cómo se implementa paginación en Firestore?",
+    opciones: [
+      "Con skip() y take()",
+      "Con limit() y startAfter(lastDocument)",
+      "Con page() y size()",
+      "No soporta paginación"
+    ],
+    correcta: 1,
+    explicacion: "limit(pageSize) limita resultados y startAfter(lastDoc) continúa desde el último documento.",
+    categoria: "Firebase"
+  },
+  {
+    id: 49,
+    pregunta: "¿Qué son las Security Rules en Firestore?",
+    opciones: [
+      "Reglas de cifrado",
+      "Reglas que definen quién puede leer/escribir qué datos",
+      "Reglas de validación de datos",
+      "Reglas de backup"
+    ],
+    correcta: 1,
+    explicacion: "Security Rules controlan el acceso basado en autenticación, validación y lógica personalizada.",
+    categoria: "Firebase"
+  },
+  {
+    id: 50,
+    pregunta: "¿Qué operador de Security Rules verifica si el usuario está autenticado?",
+    opciones: [
+      "if authenticated()",
+      "if request.auth != null",
+      "if user.loggedIn",
+      "if hasAuth()"
+    ],
+    correcta: 1,
+    explicacion: "request.auth contiene información del usuario autenticado, null si no está autenticado.",
+    categoria: "Firebase"
+  },
+  {
+    id: 51,
+    pregunta: "¿Cómo se ejecuta una transacción en Firestore?",
+    opciones: [
+      "db.transaction()",
+      "FirebaseFirestore.instance.runTransaction((transaction) async {...})",
+      "beginTransaction()",
+      "startTransaction()"
+    ],
+    correcta: 1,
+    explicacion: "runTransaction() asegura que múltiples operaciones se ejecuten atómicamente (todo o nada).",
+    categoria: "Firebase"
+  },
+
+  // Firebase Cloud Functions y Analytics (4 preguntas nuevas)
+  {
+    id: 52,
+    pregunta: "¿Qué son Cloud Functions en Firebase?",
+    opciones: [
+      "Funciones del cliente",
+      "Código backend que se ejecuta en servidores de Google en respuesta a eventos",
+      "Funciones matemáticas",
+      "Funciones de UI"
+    ],
+    correcta: 1,
+    explicacion: "Cloud Functions ejecutan código Node.js en respuesta a triggers: HTTP, Firestore, Auth, Storage.",
+    categoria: "Firebase"
+  },
+  {
+    id: 53,
+    pregunta: "¿Cómo se llama una Cloud Function desde Flutter?",
+    opciones: [
+      "http.get() a la URL de la función",
+      "FirebaseFunctions.instance.httpsCallable('nombreFuncion').call()",
+      "Firebase.callFunction()",
+      "CloudFunction.execute()"
+    ],
+    correcta: 1,
+    explicacion: "httpsCallable crea una referencia callable que maneja automáticamente la autenticación.",
+    categoria: "Firebase"
+  },
+  {
+    id: 54,
+    pregunta: "¿Para qué sirve Firebase Analytics?",
+    opciones: [
+      "Analizar el código",
+      "Rastrear eventos de usuario y comportamiento en la app",
+      "Analizar bases de datos",
+      "Optimizar rendimiento"
+    ],
+    correcta: 1,
+    explicacion: "Analytics rastrea eventos personalizados, pantallas vistas, conversiones y comportamiento del usuario.",
+    categoria: "Firebase"
+  },
+  {
+    id: 55,
+    pregunta: "¿Cómo se registra un evento personalizado en Analytics?",
+    opciones: [
+      "Analytics.track()",
+      "FirebaseAnalytics.instance.logEvent(name: 'evento', parameters: {})",
+      "Firebase.logEvent()",
+      "Analytics.record()"
+    ],
+    correcta: 1,
+    explicacion: "logEvent() registra eventos con nombre y parámetros opcionales para análisis detallado.",
+    categoria: "Firebase"
+  },
+
+  // Crashlytics y Remote Config (3 preguntas nuevas)
+  {
+    id: 56,
+    pregunta: "¿Qué es Firebase Crashlytics?",
+    opciones: [
+      "Un sistema de caché",
+      "Un servicio de reporte de crashes en tiempo real",
+      "Un debugger",
+      "Un analizador de rendimiento"
+    ],
+    correcta: 1,
+    explicacion: "Crashlytics recopila crashes automáticamente con stack traces, logs y contexto del dispositivo.",
+    categoria: "Firebase"
+  },
+  {
+    id: 57,
+    pregunta: "¿Cómo se registra un log personalizado en Crashlytics?",
+    opciones: [
+      "Crashlytics.log()",
+      "FirebaseCrashlytics.instance.log('mensaje')",
+      "Firebase.logCrash()",
+      "print() automáticamente"
+    ],
+    correcta: 1,
+    explicacion: "log() añade mensajes personalizados que aparecen en el reporte cuando ocurre un crash.",
+    categoria: "Firebase"
+  },
+  {
+    id: 58,
+    pregunta: "¿Qué es Firebase Remote Config?",
+    opciones: [
+      "Configuración remota del servidor",
+      "Servicio que permite cambiar comportamiento/apariencia de la app sin actualizar",
+      "Control remoto de dispositivos",
+      "Backup de configuración"
+    ],
+    correcta: 1,
+    explicacion: "Remote Config permite A/B testing, feature flags y cambios dinámicos sin publicar nueva versión.",
+    categoria: "Firebase"
+  },
+
+  // Manejo de tokens y autenticación avanzada (2 preguntas nuevas)
+  {
+    id: 59,
+    pregunta: "¿Qué es un refresh token?",
+    opciones: [
+      "Un token que actualiza la UI",
+      "Un token de larga duración usado para obtener nuevos access tokens sin re-login",
+      "Un token que refresca la página",
+      "Un token temporal"
+    ],
+    correcta: 1,
+    explicacion: "Access token expira pronto (15min). Refresh token (30 días) obtiene nuevos access tokens sin login.",
+    categoria: "Firebase"
+  },
+  {
+    id: 60,
+    pregunta: "¿Cómo se persiste la sesión de Firebase Auth?",
+    opciones: [
+      "Manualmente con SharedPreferences",
+      "Firebase Auth persiste automáticamente el estado de autenticación",
+      "Con Hive",
+      "No se puede persistir"
+    ],
+    correcta: 1,
+    explicacion: "Firebase Auth mantiene la sesión automáticamente. authStateChanges() detecta el estado al iniciar.",
+    categoria: "Firebase"
   }
 ];

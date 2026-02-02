@@ -299,5 +299,347 @@ export const preguntasUnidad5: Pregunta[] = [
     correcta: 2,
     explicacion: "Scaffold proporciona appBar, body, drawer, floatingActionButton y más estructura visual.",
     categoria: "Widgets básicos"
+  },
+
+  // ListView y GridView avanzados (7 preguntas nuevas)
+  {
+    id: 31,
+    pregunta: "¿Cuál es la ventaja de ListView.builder sobre ListView?",
+    opciones: [
+      "Es más bonito",
+      "Construye elementos bajo demanda (lazy loading), más eficiente para listas grandes",
+      "Permite más opciones de estilo",
+      "Es más rápido en listas pequeñas"
+    ],
+    correcta: 1,
+    explicacion: "ListView.builder solo crea widgets que son visibles en pantalla, ahorrando memoria en listas largas.",
+    categoria: "Listas"
+  },
+  {
+    id: 32,
+    pregunta: "¿Qué parámetro de ListView.builder define cuántos elementos hay?",
+    opciones: ["count", "length", "itemCount", "size"],
+    correcta: 2,
+    explicacion: "itemCount define el número total de elementos. itemBuilder se llama para cada índice.",
+    categoria: "Listas"
+  },
+  {
+    id: 33,
+    pregunta: "¿Qué hace ListView.separated()?",
+    opciones: [
+      "Separa la lista en páginas",
+      "Crea una lista con separadores personalizados entre elementos",
+      "Separa elementos por categoría",
+      "Crea múltiples listas"
+    ],
+    correcta: 1,
+    explicacion: "ListView.separated() añade un widget separador entre cada elemento, útil para divisores.",
+    categoria: "Listas"
+  },
+  {
+    id: 34,
+    pregunta: "¿Qué widget crea una grilla de elementos?",
+    opciones: ["Grid", "GridView", "Matrix", "TableView"],
+    correcta: 1,
+    explicacion: "GridView crea layouts tipo grilla con múltiples columnas.",
+    categoria: "Listas"
+  },
+  {
+    id: 35,
+    pregunta: "¿Qué parámetro de GridView define el número de columnas?",
+    opciones: ["columns", "crossAxisCount", "columnCount", "width"],
+    correcta: 1,
+    explicacion: "crossAxisCount en GridView.count() define cuántos elementos hay en el eje transversal.",
+    categoria: "Listas"
+  },
+  {
+    id: 36,
+    pregunta: "¿Qué hace SingleChildScrollView?",
+    opciones: [
+      "Permite scroll con múltiples hijos",
+      "Hace scrollable un widget único cuando su contenido excede el espacio",
+      "Crea listas",
+      "Agranda widgets"
+    ],
+    correcta: 1,
+    explicacion: "SingleChildScrollView envuelve un widget para hacerlo scrollable si no cabe en pantalla.",
+    categoria: "Listas"
+  },
+  {
+    id: 37,
+    pregunta: "¿Cuándo usar GridView.builder vs GridView?",
+    opciones: [
+      "Son iguales",
+      "GridView.builder para grillas grandes (lazy loading)",
+      "GridView.builder es más lento",
+      "GridView es deprecated"
+    ],
+    correcta: 1,
+    explicacion: "GridView.builder construye elementos bajo demanda, mejor rendimiento para grillas grandes.",
+    categoria: "Listas"
+  },
+
+  // TextField y forms (6 preguntas nuevas)
+  {
+    id: 38,
+    pregunta: "¿Qué widget se usa para entrada de texto en Flutter?",
+    opciones: ["Input", "TextInput", "TextField", "EditText"],
+    correcta: 2,
+    explicacion: "TextField es el widget de Material Design para capturar entrada de texto del usuario.",
+    categoria: "Input"
+  },
+  {
+    id: 39,
+    pregunta: "¿Qué es un TextEditingController?",
+    opciones: [
+      "Un controlador de teclado",
+      "Un objeto que controla el texto y la selección de un TextField",
+      "Un validador de texto",
+      "Un formateador de texto"
+    ],
+    correcta: 1,
+    explicacion: "TextEditingController permite leer/escribir el texto del TextField programáticamente.",
+    categoria: "Input"
+  },
+  {
+    id: 40,
+    pregunta: "¿Por qué se debe hacer dispose() de un TextEditingController?",
+    opciones: [
+      "No es necesario",
+      "Para liberar recursos y evitar memory leaks",
+      "Para guardar el texto",
+      "Para validar el input"
+    ],
+    correcta: 1,
+    explicacion: "dispose() libera recursos nativos. Siempre dispose controllers en dispose() del State.",
+    categoria: "Input"
+  },
+  {
+    id: 41,
+    pregunta: "¿Qué propiedad de TextField define el texto de placeholder?",
+    opciones: ["placeholder", "hint", "decoration: InputDecoration(hintText)", "defaultText"],
+    correcta: 2,
+    explicacion: "Se usa decoration: InputDecoration(hintText: 'texto...') para el placeholder.",
+    categoria: "Input"
+  },
+  {
+    id: 42,
+    pregunta: "¿Qué widget agrupa múltiples campos de formulario con validación?",
+    opciones: ["FormGroup", "Form", "InputGroup", "FormWrapper"],
+    correcta: 1,
+    explicacion: "Form envuelve TextFormField widgets y maneja validación con una FormKey.",
+    categoria: "Input"
+  },
+  {
+    id: 43,
+    pregunta: "¿Cómo se valida un formulario en Flutter?",
+    opciones: [
+      "form.check()",
+      "formKey.currentState?.validate()",
+      "form.isValid()",
+      "validateForm()"
+    ],
+    correcta: 1,
+    explicacion: "Se llama validate() en el FormState a través de una GlobalKey<FormState>.",
+    categoria: "Input"
+  },
+
+  // Keys y optimización (5 preguntas nuevas)
+  {
+    id: 44,
+    pregunta: "¿Para qué sirven las Keys en Flutter?",
+    opciones: [
+      "Para cifrado",
+      "Para identificar widgets únicamente y preservar estado cuando el árbol cambia",
+      "Para atajos de teclado",
+      "Para IDs de base de datos"
+    ],
+    correcta: 1,
+    explicacion: "Keys ayudan a Flutter a identificar qué widgets cambiaron, se añadieron o eliminaron.",
+    categoria: "Optimización"
+  },
+  {
+    id: 45,
+    pregunta: "¿Cuándo se debe usar una Key?",
+    opciones: [
+      "Siempre",
+      "Cuando tienes widgets del mismo tipo en una lista que pueden reordenarse o eliminarse",
+      "Nunca",
+      "Solo en StatefulWidgets"
+    ],
+    correcta: 1,
+    explicacion: "Keys son necesarias cuando widgets del mismo tipo necesitan mantener su identidad al reordenarse.",
+    categoria: "Optimización"
+  },
+  {
+    id: 46,
+    pregunta: "¿Qué tipo de Key usa un valor único para identificar el widget?",
+    opciones: ["UniqueKey", "ValueKey", "ObjectKey", "GlobalKey"],
+    correcta: 1,
+    explicacion: "ValueKey usa un valor (String, int, etc) para identificar: ValueKey('item_\$id')",
+    categoria: "Optimización"
+  },
+  {
+    id: 47,
+    pregunta: "¿Para qué sirve const en widgets?",
+    opciones: [
+      "Para hacer variables constantes",
+      "Para crear widgets en tiempo de compilación, optimizando rendimiento",
+      "Para widgets inmutables",
+      "No tiene efecto en widgets"
+    ],
+    correcta: 1,
+    explicacion: "const crea widgets en compile-time que se reutilizan, evitando reconstrucciones innecesarias.",
+    categoria: "Optimización"
+  },
+  {
+    id: 48,
+    pregunta: "¿Qué es el const constructor en Flutter?",
+    opciones: [
+      "Un constructor normal",
+      "Un constructor que crea instancias inmutables en compile-time",
+      "Un constructor deprecated",
+      "Un constructor privado"
+    ],
+    correcta: 1,
+    explicacion: "const antes de un widget crea instancias inmutables reutilizables: const Text('hola')",
+    categoria: "Optimización"
+  },
+
+  // Themes y estilos (6 preguntas nuevas)
+  {
+    id: 49,
+    pregunta: "¿Dónde se define el tema global de la aplicación?",
+    opciones: [
+      "En cada widget",
+      "En la propiedad theme de MaterialApp",
+      "En pubspec.yaml",
+      "En un archivo CSS"
+    ],
+    correcta: 1,
+    explicacion: "MaterialApp tiene la propiedad theme: ThemeData(...) para definir colores, fuentes, etc.",
+    categoria: "Temas"
+  },
+  {
+    id: 50,
+    pregunta: "¿Cómo se define el color primario de la app?",
+    opciones: [
+      "Colors.primary",
+      "ThemeData(primaryColor: Colors.blue)",
+      "setPrimaryColor()",
+      "En AndroidManifest"
+    ],
+    correcta: 1,
+    explicacion: "Se define en ThemeData con primaryColor o usando colorScheme en Material 3.",
+    categoria: "Temas"
+  },
+  {
+    id: 51,
+    pregunta: "¿Qué clase define el estilo de texto en Flutter?",
+    opciones: ["FontStyle", "TextStyle", "TextFormat", "StyleText"],
+    correcta: 1,
+    explicacion: "TextStyle define fontSize, fontWeight, color, fontFamily y más propiedades de texto.",
+    categoria: "Temas"
+  },
+  {
+    id: 52,
+    pregunta: "¿Cómo se accede a los colores del tema actual?",
+    opciones: [
+      "Theme.colors",
+      "Theme.of(context).colorScheme.primary",
+      "Colors.theme.primary",
+      "context.colors"
+    ],
+    correcta: 1,
+    explicacion: "Theme.of(context) retorna el ThemeData actual, luego se accede a colorScheme o propiedades específicas.",
+    categoria: "Temas"
+  },
+  {
+    id: 53,
+    pregunta: "¿Qué widget permite sobrescribir el tema para una parte del árbol?",
+    opciones: ["ThemeWrapper", "Theme", "ThemeScope", "CustomTheme"],
+    correcta: 1,
+    explicacion: "Theme(data: ThemeData(...), child: ...) aplica un tema diferente a sus descendientes.",
+    categoria: "Temas"
+  },
+  {
+    id: 54,
+    pregunta: "¿Cómo se aplica una fuente personalizada en Flutter?",
+    opciones: [
+      "Solo con CSS",
+      "Añadiendo la fuente a assets y declarándola en pubspec.yaml con fonts:",
+      "No se pueden usar fuentes personalizadas",
+      "Con un paquete especial"
+    ],
+    correcta: 1,
+    explicacion: "Se añade la fuente .ttf a assets, se declara en pubspec.yaml y se usa con fontFamily en TextStyle.",
+    categoria: "Temas"
+  },
+
+  // Animaciones implícitas (4 preguntas nuevas)
+  {
+    id: 55,
+    pregunta: "¿Qué es AnimatedContainer?",
+    opciones: [
+      "Un Container animado automáticamente",
+      "Un Container que anima sus propiedades cuando cambian",
+      "Un Container para animaciones 3D",
+      "Un Container que no se puede animar"
+    ],
+    correcta: 1,
+    explicacion: "AnimatedContainer anima automáticamente cambios en sus propiedades (tamaño, color, padding, etc).",
+    categoria: "Animaciones"
+  },
+  {
+    id: 56,
+    pregunta: "¿Qué propiedad define la duración de una animación implícita?",
+    opciones: ["time", "duration", "animationTime", "speed"],
+    correcta: 1,
+    explicacion: "duration: Duration(milliseconds: 500) define cuánto dura la animación.",
+    categoria: "Animaciones"
+  },
+  {
+    id: 57,
+    pregunta: "¿Qué widget anima cambios de opacidad?",
+    opciones: ["AnimatedFade", "AnimatedOpacity", "FadeTransition", "OpacityAnimation"],
+    correcta: 1,
+    explicacion: "AnimatedOpacity anima transiciones de opacidad cuando cambia su propiedad opacity.",
+    categoria: "Animaciones"
+  },
+  {
+    id: 58,
+    pregunta: "¿Qué propiedad define la curva de animación?",
+    opciones: ["animation", "curve", "easing", "transition"],
+    correcta: 1,
+    explicacion: "curve: Curves.easeInOut define cómo progresa la animación (linear, bounceIn, etc).",
+    categoria: "Animaciones"
+  },
+
+  // BuildContext y navegación básica (2 preguntas nuevas)
+  {
+    id: 59,
+    pregunta: "¿Por qué BuildContext es importante?",
+    opciones: [
+      "Para compilar código",
+      "Permite acceder a datos heredados del árbol como Theme, MediaQuery, Navigator",
+      "Para crear builds",
+      "Para depuración"
+    ],
+    correcta: 1,
+    explicacion: "BuildContext permite buscar datos hacia arriba en el árbol de widgets usando of(context).",
+    categoria: "Conceptos"
+  },
+  {
+    id: 60,
+    pregunta: "¿Qué hace el widget Builder?",
+    opciones: [
+      "Construye la app",
+      "Proporciona un nuevo BuildContext para su hijo",
+      "Compila widgets",
+      "Construye layouts"
+    ],
+    correcta: 1,
+    explicacion: "Builder proporciona un nuevo BuildContext, útil cuando necesitas un context hijo (ej: para Scaffold.of()).",
+    categoria: "Conceptos"
   }
 ];
