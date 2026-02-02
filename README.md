@@ -31,7 +31,8 @@ Test interactivo para el curso de Flutter con 165 preguntas distribuidas en 6 un
 
 ```bash
 # Clonar el repositorio
-git clone <tu-repositorio>
+git clone https://github.com/ajesusdl27/quizFlutter.git
+cd quizFlutter
 
 # Instalar dependencias
 npm install
