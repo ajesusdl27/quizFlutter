@@ -5,6 +5,7 @@ import { preguntasUnidad5 } from './unidad5';
 import { preguntasUnidad6 } from './unidad6';
 import { preguntasUnidad7 } from './unidad7';
 import { preguntasUnidad8 } from './unidad8';
+import { preguntasExamenAnterior } from './examen_anterior';
 
 export const unidades: UnidadInfo[] = [
   {
@@ -54,6 +55,14 @@ export const unidades: UnidadInfo[] = [
     temas: ['APIs REST', 'Firebase Auth', 'Firestore', 'Riverpod', 'Freezed'],
     color: 'from-orange-500 to-red-600',
     icono: '🔥'
+  },
+  {
+    id: 'examen_anterior',
+    titulo: 'Examen Anterior',
+    descripcion: 'Preguntas de exámenes anteriores: Android, Git, Dart y Flutter.',
+    temas: ['View Binding', 'ConstraintLayout', 'RecyclerView', 'Git', 'Dart', 'Flutter'],
+    color: 'from-amber-500 to-yellow-600',
+    icono: '📝'
   }
 ];
 
@@ -64,6 +73,7 @@ export const preguntasPorUnidad = {
   unidad6: preguntasUnidad6,
   unidad7: preguntasUnidad7,
   unidad8: preguntasUnidad8,
+  examen_anterior: preguntasExamenAnterior,
 };
 
 export function obtenerPreguntas(unidadId: string) {
