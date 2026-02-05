@@ -14,15 +14,24 @@ interface EstadoPregunta {
 }
 
 export default function QuizContainer({ preguntas, unidadTitulo, unidadColor }: QuizContainerProps) {
-  // Aleatorizar preguntas al montar el componente
-  const preguntasAleatorias = useMemo(() => {
-    const shuffled = [...preguntas];
-    for (let i = shuffled.length - 1; i > 0; i--) {
+  const shuffleInPlace = <T,>(arr: T[]) => {
+    for (let i = arr.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      [arr[i], arr[j]] = [arr[j], arr[i]];
     }
-    return shuffled;
-  }, []);
+    return arr;
+  };
+
+  // Aleatorizar preguntas y opciones al cambiar la unidad
+  const preguntasAleatorias = useMemo(() => {
+    const preguntasMezcladas = shuffleInPlace([...preguntas]);
+    return preguntasMezcladas.map(pregunta => {
+      const indices = shuffleInPlace(pregunta.opciones.map((_, i) => i));
+      const opciones = indices.map(i => pregunta.opciones[i]);
+      const correcta = indices.indexOf(pregunta.correcta);
+      return { ...pregunta, opciones, correcta };
+    });
+  }, [preguntas]);
 
   const [preguntaActual, setPreguntaActual] = useState(0);
   const [estadoPreguntas, setEstadoPreguntas] = useState<EstadoPregunta[]>(
@@ -33,6 +42,18 @@ export default function QuizContainer({ preguntas, unidadTitulo, unidadColor }: 
     }))
   );
   const [mostrarResultados, setMostrarResultados] = useState(false);
+
+  useEffect(() => {
+    setEstadoPreguntas(
+      preguntasAleatorias.map(() => ({
+        respondida: false,
+        respuestaSeleccionada: null,
+        esCorrecta: null,
+      }))
+    );
+    setPreguntaActual(0);
+    setMostrarResultados(false);
+  }, [preguntasAleatorias]);
 
   const pregunta = preguntasAleatorias[preguntaActual];
   const estado = estadoPreguntas[preguntaActual];
