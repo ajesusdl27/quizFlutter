@@ -12,6 +12,7 @@ import { preguntasUnidad8 } from './desarrollo-interfaces/unidad8';
 // Imports de Acceso a Datos
 import { preguntasPsp } from './acceso-datos/psp';
 import { preguntasHibernate, hibernateInfo } from './acceso-datos/hibernate';
+import { preguntasOrmJpa, ormJpaInfo } from './acceso-datos/orm-jpa';
 
 // Imports de Exámenes
 import { preguntasExamenAnterior } from './examenes/examen_anterior';
@@ -92,6 +93,10 @@ const temasAccesoDatos: Tema[] = [
   {
     ...hibernateInfo,
     asignaturaId: 'acceso-datos'
+  },
+  {
+    ...ormJpaInfo,
+    asignaturaId: 'acceso-datos'
   }
 ];
 
@@ -126,7 +131,8 @@ const preguntasPorTema: Record<string, Record<string, Pregunta[]>> = {
   },
   'acceso-datos': {
     'psp': preguntasPsp,
-    'hibernate': preguntasHibernate
+    'hibernate': preguntasHibernate,
+    'orm-jpa': preguntasOrmJpa
   }
 };
 
