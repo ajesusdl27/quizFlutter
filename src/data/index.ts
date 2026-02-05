@@ -5,6 +5,7 @@ import { preguntasUnidad5 } from './unidad5';
 import { preguntasUnidad6 } from './unidad6';
 import { preguntasUnidad7 } from './unidad7';
 import { preguntasUnidad8 } from './unidad8';
+import { preguntasPsp } from './psp';
 import { preguntasExamenAnterior } from './examen_anterior';
 
 export const unidades: UnidadInfo[] = [
@@ -57,6 +58,14 @@ export const unidades: UnidadInfo[] = [
     icono: '🔥'
   },
   {
+    id: 'psp',
+    titulo: 'Hibernate',
+    descripcion: 'ORM, JPA y Hibernate: mapeo, sesiones, consultas, relaciones y configuración.',
+    temas: ['ORM y JDBC', 'Arquitectura', 'Mapeo', 'HQL/JPQL', 'Relaciones'],
+    color: 'from-emerald-500 to-teal-600',
+    icono: '🧪'
+  },
+  {
     id: 'examen_anterior',
     titulo: 'Examen Anterior',
     descripcion: 'Preguntas de exámenes anteriores: Android, Git, Dart y Flutter.',
@@ -73,6 +82,7 @@ export const preguntasPorUnidad = {
   unidad6: preguntasUnidad6,
   unidad7: preguntasUnidad7,
   unidad8: preguntasUnidad8,
+  psp: preguntasPsp,
   examen_anterior: preguntasExamenAnterior,
 };
 

@@ -8,6 +8,7 @@ const unidadesConPreguntas = unidades.map(unidad => ({
 }));
 
 const totalPreguntas = unidadesConPreguntas.reduce((acc, u) => acc + u.numPreguntas, 0);
+const totalUnidades = unidades.length;
 ---
 
 <Layout title="Flutter Quiz - Test Interactivo de Flutter">
@@ -35,7 +36,7 @@ const totalPreguntas = unidadesConPreguntas.reduce((acc, u) => acc + u.numPregun
       
       <p class="text-lg text-slate-400 mb-10 max-w-2xl mx-auto">
         Domina Flutter y Dart con <span class="text-white font-bold text-xl">{totalPreguntas}</span> preguntas 
-        cuidadosamente diseñadas en <span class="text-white font-bold text-xl">6 unidades</span> temáticas
+        cuidadosamente diseñadas en <span class="text-white font-bold text-xl">{totalUnidades} unidades</span> temáticas
       </p>
       
       <!-- Badges animados -->
@@ -190,7 +191,7 @@ const totalPreguntas = unidadesConPreguntas.reduce((acc, u) => acc + u.numPregun
       <div class="text-center p-6 bg-slate-800/30 rounded-2xl border border-slate-700/30">
         <span class="text-3xl mb-2 block">📚</span>
         <p class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-          6
+          {totalUnidades}
         </p>
         <p class="text-slate-400 text-sm mt-1">Unidades</p>
       </div>
