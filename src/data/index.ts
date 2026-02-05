@@ -7,6 +7,7 @@ import { preguntasUnidad7 } from './unidad7';
 import { preguntasUnidad8 } from './unidad8';
 import { preguntasPsp } from './psp';
 import { preguntasExamenAnterior } from './examen_anterior';
+import { preguntasHibernate, hibernateInfo } from './hibernate';
 
 export const unidades: UnidadInfo[] = [
   {
@@ -72,7 +73,8 @@ export const unidades: UnidadInfo[] = [
     temas: ['View Binding', 'ConstraintLayout', 'RecyclerView', 'Git', 'Dart', 'Flutter'],
     color: 'from-amber-500 to-yellow-600',
     icono: '📝'
-  }
+  },
+  hibernateInfo
 ];
 
 export const preguntasPorUnidad = {
@@ -84,6 +86,7 @@ export const preguntasPorUnidad = {
   unidad8: preguntasUnidad8,
   psp: preguntasPsp,
   examen_anterior: preguntasExamenAnterior,
+  hibernate: preguntasHibernate,
 };
 
 export function obtenerPreguntas(unidadId: string) {
