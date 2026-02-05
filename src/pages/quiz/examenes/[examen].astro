@@ -1,0 +1,68 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import QuizContainer from '../../../components/react/QuizContainer';
+import { examen, preguntasExamenes } from '../../../data';
+
+export function getStaticPaths() {
+  return [
+    {
+      params: { examen: 'examen-anterior' }
+    }
+  ];
+}
+
+const { examen: examenId } = Astro.params;
+const preguntas = preguntasExamenes[examenId as keyof typeof preguntasExamenes] || [];
+
+if (!preguntas.length) {
+  return Astro.redirect('/404');
+}
+---
+
+<Layout 
+  title={`${examen.titulo} - Quiz 2º DAM`} 
+  description={examen.descripcion}
+>
+  <!-- Breadcrumb -->
+  <nav class="mb-6">
+    <ol class="flex items-center gap-2 text-sm text-slate-400">
+      <li><a href="/" class="hover:text-white transition-colors">Inicio</a></li>
+      <li class="text-slate-600">/</li>
+      <li><a href="/" class="hover:text-white transition-colors">Exámenes</a></li>
+      <li class="text-slate-600">/</li>
+      <li class={`bg-gradient-to-r ${examen.color} bg-clip-text text-transparent font-medium`}>
+        {examen.titulo}
+      </li>
+    </ol>
+  </nav>
+
+  <!-- Quiz Info Header -->
+  <div class="mb-8 bg-slate-800/30 rounded-2xl p-6 border border-slate-700">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div class="flex items-center gap-4">
+        <span class="text-4xl">{examen.icono}</span>
+        <div>
+          <h1 class={`text-2xl font-bold bg-gradient-to-r ${examen.color} bg-clip-text text-transparent`}>
+            {examen.titulo}
+          </h1>
+          <p class="text-slate-400 text-sm mt-1">{examen.descripcion}</p>
+        </div>
+      </div>
+      <div class="flex flex-wrap gap-2">
+        {examen.temas.map(tema => (
+          <span class="px-3 py-1 bg-slate-700/50 rounded-lg text-xs text-slate-300">
+            {tema}
+          </span>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <!-- Quiz Container (React Component) -->
+  <QuizContainer 
+    client:load 
+    preguntas={preguntas}
+    unidadTitulo={examen.titulo}
+    unidadColor={examen.color}
+  />
+</Layout>

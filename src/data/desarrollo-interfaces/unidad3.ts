@@ -1,4 +1,4 @@
-import type { Pregunta } from './types';
+import type { Pregunta } from '../types';
 
 export const preguntasUnidad3: Pregunta[] = [
   // Sintaxis básica y variables (5)

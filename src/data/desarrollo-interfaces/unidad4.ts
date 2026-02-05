@@ -1,4 +1,4 @@
-import type { Pregunta } from './types';
+import type { Pregunta } from '../types';
 
 export const preguntasUnidad4: Pregunta[] = [
   // Instalación y configuración (5)

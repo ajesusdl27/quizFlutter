@@ -1,4 +1,4 @@
-import type { Pregunta } from './types';
+import type { Pregunta } from '../types';
 
 export const preguntasUnidad5: Pregunta[] = [
   // Widgets básicos (7)

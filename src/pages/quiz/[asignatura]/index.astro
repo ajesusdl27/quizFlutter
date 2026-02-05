@@ -1,0 +1,125 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { asignaturas, temasPorAsignatura, obtenerEstadisticasAsignatura, obtenerAsignaturaInfo } from '../../../data';
+
+export function getStaticPaths() {
+  return asignaturas.map(asignatura => ({
+    params: { asignatura: asignatura.id }
+  }));
+}
+
+const { asignatura: asignaturaId } = Astro.params;
+const asignatura = obtenerAsignaturaInfo(asignaturaId as string);
+const temas = temasPorAsignatura[asignaturaId as string] || [];
+const stats = obtenerEstadisticasAsignatura(asignaturaId as string);
+
+if (!asignatura) {
+  return Astro.redirect('/404');
+}
+
+const tieneContenido = temas.length > 0;
+---
+
+<Layout 
+  title={`${asignatura.nombre} - Quiz 2º DAM`} 
+  description={asignatura.descripcion}
+>
+  <!-- Breadcrumb -->
+  <nav class="mb-6">
+    <ol class="flex items-center gap-2 text-sm text-slate-400">
+      <li><a href="/" class="hover:text-white transition-colors">Inicio</a></li>
+      <li class="text-slate-600">/</li>
+      <li class={`bg-gradient-to-r ${asignatura.color} bg-clip-text text-transparent font-medium`}>
+        {asignatura.nombreCorto}
+      </li>
+    </ol>
+  </nav>
+
+  <!-- Asignatura Header -->
+  <div class="mb-8 bg-slate-800/30 rounded-2xl p-8 border border-slate-700">
+    <div class="flex items-start gap-6">
+      <span class="text-6xl">{asignatura.icono}</span>
+      <div class="flex-1">
+        <h1 class={`text-4xl font-bold bg-gradient-to-r ${asignatura.color} bg-clip-text text-transparent mb-2`}>
+          {asignatura.nombre}
+        </h1>
+        <p class="text-slate-300 text-lg mb-4">{asignatura.descripcion}</p>
+        <div class="flex gap-6 text-sm">
+          <div class="flex items-center gap-2">
+            <span class="text-2xl">📚</span>
+            <span class="text-slate-400">
+              <strong class="text-white">{stats.numTemas}</strong> {stats.numTemas === 1 ? 'tema' : 'temas'}
+            </span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-2xl">❓</span>
+            <span class="text-slate-400">
+              <strong class="text-white">{stats.numPreguntas}</strong> {stats.numPreguntas === 1 ? 'pregunta' : 'preguntas'}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {tieneContenido ? (
+    <>
+      <!-- Temas Grid -->
+      <div class="mb-8">
+        <h2 class="text-2xl font-bold text-white mb-6">Temas disponibles</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {temas.map(tema => {
+            const href = `/quiz/${asignaturaId}/${tema.id}`;
+            return (
+              <a 
+                href={href}
+                class="group bg-slate-800/50 hover:bg-slate-800 rounded-xl p-6 border border-slate-700 hover:border-slate-600 transition-all duration-300 hover:scale-105"
+              >
+                <div class="flex items-start gap-4 mb-4">
+                  <span class="text-4xl group-hover:scale-110 transition-transform">{tema.icono}</span>
+                  <div class="flex-1">
+                    <h3 class={`text-xl font-bold bg-gradient-to-r ${tema.color} bg-clip-text text-transparent mb-2`}>
+                      {tema.titulo}
+                    </h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">{tema.descripcion}</p>
+                  </div>
+                </div>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  {tema.temas.slice(0, 3).map(contenido => (
+                    <span class="px-2 py-1 bg-slate-700/50 rounded text-xs text-slate-300">
+                      {contenido}
+                    </span>
+                  ))}
+                  {tema.temas.length > 3 && (
+                    <span class="px-2 py-1 bg-slate-700/50 rounded text-xs text-slate-400">
+                      +{tema.temas.length - 3} más
+                    </span>
+                  )}
+                </div>
+                <div class="flex items-center justify-between text-sm">
+                  <span class="text-slate-500">Comenzar práctica →</span>
+                </div>
+              </a>
+            );
+          })}
+        </div>
+      </div>
+    </>
+  ) : (
+    <!-- Estado vacío -->
+    <div class="text-center py-16 bg-slate-800/30 rounded-2xl border border-slate-700">
+      <span class="text-6xl mb-4 inline-block">📝</span>
+      <h3 class="text-xl font-bold text-white mb-2">Contenido próximamente</h3>
+      <p class="text-slate-400 max-w-md mx-auto">
+        Los temas y preguntas de esta asignatura están pendientes de ser añadidos.
+        Vuelve pronto para practicar.
+      </p>
+      <a 
+        href="/"
+        class="inline-block mt-6 px-6 py-3 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-lg hover:opacity-90 transition-opacity"
+      >
+        Volver al inicio
+      </a>
+    </div>
+  )}
+</Layout>

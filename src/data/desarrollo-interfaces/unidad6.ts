@@ -1,4 +1,4 @@
-import type { Pregunta } from './types';
+import type { Pregunta } from '../types';
 
 export const preguntasUnidad6: Pregunta[] = [
   // Interfaces naturales y gestos (8)

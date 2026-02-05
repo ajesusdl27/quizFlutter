@@ -1,4 +1,4 @@
-import type { Pregunta } from './types';
+import type { Pregunta } from '../types';
 
 export const preguntasExamenAnterior: Pregunta[] = [
   // Bloque 1: View Binding (10)

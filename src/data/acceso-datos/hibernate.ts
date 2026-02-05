@@ -1,4 +1,4 @@
-import type { Pregunta } from './types';
+import type { Pregunta } from '../types';
 
 export const preguntasHibernate: Pregunta[] = [
   // Introducción y Conceptos Básicos (ORM) - Preguntas 1-7

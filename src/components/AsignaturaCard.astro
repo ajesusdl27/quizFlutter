@@ -1,0 +1,42 @@
+---
+import type { Asignatura } from '../data/types';
+
+interface Props {
+  asignatura: Asignatura;
+  numTemas: number;
+  numPreguntas: number;
+}
+
+const { asignatura, numTemas, numPreguntas } = Astro.props;
+const href = `/quiz/${asignatura.id}`;
+---
+
+<a 
+  href={href}
+  class="group bg-slate-800/50 hover:bg-slate-800 rounded-xl p-6 border border-slate-700 hover:border-slate-600 transition-all duration-300 hover:scale-105"
+>
+  <div class="flex items-start gap-4 mb-4">
+    <span class="text-5xl group-hover:scale-110 transition-transform">{asignatura.icono}</span>
+    <div class="flex-1">
+      <div class="flex items-center gap-2 mb-1">
+        <h3 class={`text-xl font-bold bg-gradient-to-r ${asignatura.color} bg-clip-text text-transparent`}>
+          {asignatura.nombreCorto}
+        </h3>
+      </div>
+      <h4 class="text-white font-medium mb-2">{asignatura.nombre}</h4>
+      <p class="text-slate-400 text-sm leading-relaxed line-clamp-2">{asignatura.descripcion}</p>
+    </div>
+  </div>
+  
+  <div class="flex items-center justify-between text-sm pt-4 border-t border-slate-700/50">
+    <div class="flex gap-4">
+      <span class="text-slate-400">
+        📚 <strong class="text-white">{numTemas}</strong> {numTemas === 1 ? 'tema' : 'temas'}
+      </span>
+      <span class="text-slate-400">
+        ❓ <strong class="text-white">{numPreguntas}</strong>
+      </span>
+    </div>
+    <span class="text-slate-500 group-hover:text-slate-300 transition-colors">Ver temas →</span>
+  </div>
+</a>

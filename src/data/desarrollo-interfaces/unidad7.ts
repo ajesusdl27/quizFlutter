@@ -1,4 +1,4 @@
-import type { Pregunta } from './types';
+import type { Pregunta } from '../types';
 
 export const preguntasUnidad7: Pregunta[] = [
   // Navegación y routing (10)

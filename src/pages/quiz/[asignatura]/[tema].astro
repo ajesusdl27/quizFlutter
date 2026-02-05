@@ -1,0 +1,96 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import QuizContainer from '../../../components/react/QuizContainer';
+import { temasPorAsignatura, obtenerTema, obtenerPreguntasTema, obtenerAsignaturaInfo } from '../../../data';
+
+export function getStaticPaths() {
+  const paths: any[] = [];
+  
+  // Generar rutas para cada asignatura y tema
+  Object.keys(temasPorAsignatura).forEach(asignaturaId => {
+    const temas = temasPorAsignatura[asignaturaId];
+    temas.forEach(tema => {
+      paths.push({
+        params: { 
+          asignatura: asignaturaId,
+          tema: tema.id
+        }
+      });
+    });
+  });
+  
+  return paths;
+}
+
+const { asignatura: asignaturaId, tema: temaId } = Astro.params;
+const tema = obtenerTema(asignaturaId as string, temaId as string);
+const preguntas = obtenerPreguntasTema(asignaturaId as string, temaId as string);
+const asignatura = obtenerAsignaturaInfo(asignaturaId as string);
+
+if (!tema || !asignatura) {
+  return Astro.redirect('/404');
+}
+---
+
+<Layout 
+  title={`${tema.titulo} - ${asignatura.nombreCorto} - Quiz 2º DAM`} 
+  description={tema.descripcion}
+>
+  <!-- Breadcrumb -->
+  <nav class="mb-6">
+    <ol class="flex items-center gap-2 text-sm text-slate-400">
+      <li><a href="/" class="hover:text-white transition-colors">Inicio</a></li>
+      <li class="text-slate-600">/</li>
+      <li>
+        <a href={`/quiz/${asignaturaId}`} class="hover:text-white transition-colors">
+          {asignatura.nombreCorto}
+        </a>
+      </li>
+      <li class="text-slate-600">/</li>
+      <li class={`bg-gradient-to-r ${tema.color} bg-clip-text text-transparent font-medium`}>
+        {tema.titulo}
+      </li>
+    </ol>
+  </nav>
+
+  <!-- Quiz Info Header -->
+  <div class="mb-8 bg-slate-800/30 rounded-2xl p-6 border border-slate-700">
+    <div class="flex flex-col gap-4">
+      <!-- Asignatura Badge -->
+      <div class="flex items-center gap-2">
+        <span class="text-2xl">{asignatura.icono}</span>
+        <span class={`text-sm font-medium bg-gradient-to-r ${asignatura.color} bg-clip-text text-transparent`}>
+          {asignatura.nombre}
+        </span>
+      </div>
+      
+      <!-- Tema Info -->
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div class="flex items-center gap-4">
+          <span class="text-4xl">{tema.icono}</span>
+          <div>
+            <h1 class={`text-2xl font-bold bg-gradient-to-r ${tema.color} bg-clip-text text-transparent`}>
+              {tema.titulo}
+            </h1>
+            <p class="text-slate-400 text-sm mt-1">{tema.descripcion}</p>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          {tema.temas.map(contenido => (
+            <span class="px-3 py-1 bg-slate-700/50 rounded-lg text-xs text-slate-300">
+              {contenido}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quiz Container (React Component) -->
+  <QuizContainer 
+    client:load 
+    preguntas={preguntas}
+    unidadTitulo={tema.titulo}
+    unidadColor={tema.color}
+  />
+</Layout>

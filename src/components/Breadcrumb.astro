@@ -1,0 +1,36 @@
+---
+interface BreadcrumbItem {
+  label: string;
+  href?: string;
+  color?: string;
+}
+
+interface Props {
+  items: BreadcrumbItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<nav class="mb-6">
+  <ol class="flex items-center gap-2 text-sm text-slate-400">
+    {items.map((item, index) => (
+      <>
+        <li>
+          {item.href ? (
+            <a href={item.href} class="hover:text-white transition-colors">
+              {item.label}
+            </a>
+          ) : item.color ? (
+            <span class={`bg-gradient-to-r ${item.color} bg-clip-text text-transparent font-medium`}>
+              {item.label}
+            </span>
+          ) : (
+            <span>{item.label}</span>
+          )}
+        </li>
+        {index < items.length - 1 && <li class="text-slate-600">/</li>}
+      </>
+    ))}
+  </ol>
+</nav>

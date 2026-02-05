@@ -1,4 +1,4 @@
-import type { Pregunta } from './types';
+import type { Pregunta } from '../types';
 
 export const preguntasPsp: Pregunta[] = [
   // Bloque 1: Conceptos de ORM y JDBC

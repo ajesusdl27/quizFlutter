@@ -1,4 +1,4 @@
-import type { Pregunta } from './types';
+import type { Pregunta } from '../types';
 
 export const preguntasUnidad8: Pregunta[] = [
   // Consumo de APIs REST (10)
