@@ -17,6 +17,12 @@ import { preguntasOrmJpa, ormJpaInfo } from './acceso-datos/orm-jpa';
 // Imports de Exámenes
 import { preguntasExamenAnterior } from './examenes/examen_anterior';
 
+// Imports de SGE
+import { preguntasAstroFundamentos, astroFundamentosInfo } from './sge/astro-fundamentos';
+import { preguntasSupabase, supabaseInfo } from './sge/supabase';
+import { preguntasStripe, stripeInfo } from './sge/stripe';
+import { preguntasCoolify, coolifyInfo } from './sge/coolify';
+
 // ============================================================
 // TEMAS POR ASIGNATURA
 // ============================================================
@@ -100,6 +106,26 @@ const temasAccesoDatos: Tema[] = [
   }
 ];
 
+// Temas de SGE
+const temasSGE: Tema[] = [
+  {
+    ...astroFundamentosInfo,
+    asignaturaId: 'sge'
+  },
+  {
+    ...supabaseInfo,
+    asignaturaId: 'sge'
+  },
+  {
+    ...stripeInfo,
+    asignaturaId: 'sge'
+  },
+  {
+    ...coolifyInfo,
+    asignaturaId: 'sge'
+  }
+];
+
 // ============================================================
 // ESTRUCTURA JERÁRQUICA: TEMAS AGRUPADOS POR ASIGNATURA
 // ============================================================
@@ -108,7 +134,7 @@ export const temasPorAsignatura: Record<string, Tema[]> = {
   'desarrollo-interfaces': temasDesarrolloInterfaces,
   'acceso-datos': temasAccesoDatos,
   'psp': [],
-  'sge': [],
+  'sge': temasSGE,
   'ingles-dam': [],
   'empleabilidad': [],
   'ia': [],
@@ -133,6 +159,12 @@ const preguntasPorTema: Record<string, Record<string, Pregunta[]>> = {
     'psp': preguntasPsp,
     'hibernate': preguntasHibernate,
     'orm-jpa': preguntasOrmJpa
+  },
+  'sge': {
+    'astro-fundamentos': preguntasAstroFundamentos,
+    'supabase': preguntasSupabase,
+    'stripe': preguntasStripe,
+    'coolify': preguntasCoolify
   }
 };
 
