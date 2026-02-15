@@ -19,6 +19,9 @@ import { preguntasExamenAnterior } from './examenes/examen_anterior';
 
 // Imports de SGE
 import { preguntasAstroFundamentos, astroFundamentosInfo } from './sge/astro-fundamentos';
+import { preguntasAstroApuntes, astroApuntesInfo } from './sge/astro-apuntes';
+import { preguntasMcpSupabaseStripe, mcpSupabaseStripeInfo } from './sge/mcp-supabase-stripe';
+import { preguntasCrmAstroSupabaseStripe, crmAstroSupabaseStripeInfo } from './sge/crm-astro-supabase-stripe';
 import { preguntasSupabase, supabaseInfo } from './sge/supabase';
 import { preguntasStripe, stripeInfo } from './sge/stripe';
 import { preguntasCoolify, coolifyInfo } from './sge/coolify';
@@ -113,6 +116,18 @@ const temasSGE: Tema[] = [
     asignaturaId: 'sge'
   },
   {
+    ...astroApuntesInfo,
+    asignaturaId: 'sge'
+  },
+  {
+    ...mcpSupabaseStripeInfo,
+    asignaturaId: 'sge'
+  },
+  {
+    ...crmAstroSupabaseStripeInfo,
+    asignaturaId: 'sge'
+  },
+  {
     ...supabaseInfo,
     asignaturaId: 'sge'
   },
@@ -162,6 +177,9 @@ const preguntasPorTema: Record<string, Record<string, Pregunta[]>> = {
   },
   'sge': {
     'astro-fundamentos': preguntasAstroFundamentos,
+    'astro-apuntes': preguntasAstroApuntes,
+    'mcp-supabase-stripe': preguntasMcpSupabaseStripe,
+    'crm-astro-supabase-stripe': preguntasCrmAstroSupabaseStripe,
     'supabase': preguntasSupabase,
     'stripe': preguntasStripe,
     'coolify': preguntasCoolify
