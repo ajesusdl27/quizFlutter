@@ -498,7 +498,7 @@ export const preguntasTema7Cuentalo: Pregunta[] = [
 
 export const tema7CuentaloInfo = {
   id: 'tema7-cuentalo',
-  titulo: 'UNIDAD 1 Emprendimiento en acción V. Hazlo realidad y cuéntalo',
+  titulo: 'UNIDAD 7 Emprendimiento en acción V. Hazlo realidad y cuéntalo',
   descripcion: 'Resultados de aprendizaje, plan de acción, marketing, comunicación del proyecto, competencias e impacto.',
   temas: [
     'Resultados de Aprendizaje (RA) y Objetivos',
