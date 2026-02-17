@@ -26,6 +26,9 @@ import { preguntasSupabase, supabaseInfo } from './sge/supabase';
 import { preguntasStripe, stripeInfo } from './sge/stripe';
 import { preguntasCoolify, coolifyInfo } from './sge/coolify';
 
+// Imports de Empleabilidad
+import { preguntasTema7, tema7Info } from './empleabilidad/tema7';
+
 // ============================================================
 // TEMAS POR ASIGNATURA
 // ============================================================
@@ -141,6 +144,14 @@ const temasSGE: Tema[] = [
   }
 ];
 
+// Temas de Empleabilidad
+const temasEmpleabilidad: Tema[] = [
+  {
+    ...tema7Info,
+    asignaturaId: 'empleabilidad'
+  }
+];
+
 // ============================================================
 // ESTRUCTURA JERÁRQUICA: TEMAS AGRUPADOS POR ASIGNATURA
 // ============================================================
@@ -151,7 +162,7 @@ export const temasPorAsignatura: Record<string, Tema[]> = {
   'psp': [],
   'sge': temasSGE,
   'ingles-dam': [],
-  'empleabilidad': [],
+  'empleabilidad': temasEmpleabilidad,
   'ia': [],
   'multimedia': [],
   'proyectos': []
@@ -183,6 +194,9 @@ const preguntasPorTema: Record<string, Record<string, Pregunta[]>> = {
     'supabase': preguntasSupabase,
     'stripe': preguntasStripe,
     'coolify': preguntasCoolify
+  },
+  'empleabilidad': {
+    'tema7': preguntasTema7
   }
 };
 
