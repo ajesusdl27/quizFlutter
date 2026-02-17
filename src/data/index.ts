@@ -28,6 +28,7 @@ import { preguntasCoolify, coolifyInfo } from './sge/coolify';
 
 // Imports de Empleabilidad
 import { preguntasTema7, tema7Info } from './empleabilidad/tema7';
+import { preguntasTema7Cuentalo, tema7CuentaloInfo } from './empleabilidad/tema7-cuentalo';
 
 // ============================================================
 // TEMAS POR ASIGNATURA
@@ -149,6 +150,10 @@ const temasEmpleabilidad: Tema[] = [
   {
     ...tema7Info,
     asignaturaId: 'empleabilidad'
+  },
+  {
+    ...tema7CuentaloInfo,
+    asignaturaId: 'empleabilidad'
   }
 ];
 
@@ -196,7 +201,8 @@ const preguntasPorTema: Record<string, Record<string, Pregunta[]>> = {
     'coolify': preguntasCoolify
   },
   'empleabilidad': {
-    'tema7': preguntasTema7
+    'tema7': preguntasTema7,
+    'tema7-cuentalo': preguntasTema7Cuentalo
   }
 };
 
