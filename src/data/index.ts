@@ -39,6 +39,18 @@ import {
   tema7CuentaloInfo,
 } from "./empleabilidad/tema7-cuentalo";
 
+// Imports de Inglés DAM
+import { preguntasModals, modalsInfo } from "./ingles-dam/modals";
+import {
+  preguntasPrepositions,
+  prepositionsInfo,
+} from "./ingles-dam/prepositions";
+import {
+  preguntasConditionals,
+  conditionalsInfo,
+} from "./ingles-dam/conditionals";
+import { preguntasRelatives, relativesInfo } from "./ingles-dam/relatives";
+
 // ============================================================
 // TEMAS POR ASIGNATURA
 // ============================================================
@@ -191,6 +203,26 @@ const temasEmpleabilidad: Tema[] = [
   },
 ];
 
+// Temas de Inglés DAM
+const temasInglesDam: Tema[] = [
+  {
+    ...modalsInfo,
+    asignaturaId: "ingles-dam",
+  },
+  {
+    ...prepositionsInfo,
+    asignaturaId: "ingles-dam",
+  },
+  {
+    ...conditionalsInfo,
+    asignaturaId: "ingles-dam",
+  },
+  {
+    ...relativesInfo,
+    asignaturaId: "ingles-dam",
+  },
+];
+
 // ============================================================
 // ESTRUCTURA JERÁRQUICA: TEMAS AGRUPADOS POR ASIGNATURA
 // ============================================================
@@ -200,7 +232,7 @@ export const temasPorAsignatura: Record<string, Tema[]> = {
   "acceso-datos": temasAccesoDatos,
   psp: [],
   sge: temasSGE,
-  "ingles-dam": [],
+  "ingles-dam": temasInglesDam,
   empleabilidad: temasEmpleabilidad,
   ia: [],
   multimedia: [],
@@ -237,6 +269,12 @@ const preguntasPorTema: Record<string, Record<string, Pregunta[]>> = {
   empleabilidad: {
     tema7: preguntasTema7,
     "tema7-cuentalo": preguntasTema7Cuentalo,
+  },
+  "ingles-dam": {
+    modals: preguntasModals,
+    prepositions: preguntasPrepositions,
+    conditionals: preguntasConditionals,
+    relatives: preguntasRelatives,
   },
 };
 
