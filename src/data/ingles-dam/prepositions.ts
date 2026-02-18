@@ -18,7 +18,7 @@ export const preguntasPrepositions: Pregunta[] = [
     opciones: ["at / at", "in / in", "at / in"],
     correcta: 0,
     explicacion:
-      "We say 'good at' and 'bad at' something. Both use the preposition 'at' after adjectives describing ability.",
+      "Se dice 'good at' y 'bad at' algo. Ambas usan la preposición 'at' después de adjetivos que describen habilidad.",
     categoria: "Dependent Prepositions",
   },
   // Q8
@@ -28,7 +28,7 @@ export const preguntasPrepositions: Pregunta[] = [
     opciones: ["in", "on", "at"],
     correcta: 2,
     explicacion:
-      "We use 'at' with specific places like the airport, the station, or a building.",
+      "Se usa 'at' con lugares específicos como el aeropuerto, la estación o un edificio.",
     categoria: "Prepositions of Place",
   },
   // Q12
@@ -38,7 +38,7 @@ export const preguntasPrepositions: Pregunta[] = [
     opciones: ["at", "in", "on"],
     correcta: 1,
     explicacion:
-      "The adjective 'interested' is followed by 'in'. 'Interested in' is a fixed collocation.",
+      "El adjetivo 'interested' va seguido de 'in'. 'Interested in' es una colocación fija.",
     categoria: "Dependent Prepositions",
   },
   // Q16
@@ -48,7 +48,7 @@ export const preguntasPrepositions: Pregunta[] = [
     opciones: ["of", "about", "for"],
     correcta: 2,
     explicacion:
-      "The verb 'apologize' is followed by 'for'. 'Apologize for' is a fixed collocation.",
+      "El verbo 'apologize' va seguido de 'for'. 'Apologize for' es una colocación fija.",
     categoria: "Dependent Prepositions",
   },
   // Q20
@@ -58,7 +58,7 @@ export const preguntasPrepositions: Pregunta[] = [
     opciones: ["at", "on", "in"],
     correcta: 1,
     explicacion:
-      "We use 'on' for surfaces. The keys are resting on the surface of the table.",
+      "Se usa 'on' para superficies. Las llaves están apoyadas sobre la superficie de la mesa.",
     categoria: "Prepositions of Place",
   },
   // Q24
@@ -68,7 +68,7 @@ export const preguntasPrepositions: Pregunta[] = [
     opciones: ["from", "of", "with"],
     correcta: 1,
     explicacion:
-      "The adjective 'afraid' is followed by 'of'. 'Afraid of' is a fixed collocation.",
+      "El adjetivo 'afraid' va seguido de 'of'. 'Afraid of' es una colocación fija.",
     categoria: "Dependent Prepositions",
   },
   // Q28
@@ -78,7 +78,7 @@ export const preguntasPrepositions: Pregunta[] = [
     opciones: ["in", "at", "on"],
     correcta: 2,
     explicacion:
-      "We use 'on' with days of the week (on Monday, on Friday, etc.).",
+      "Se usa 'on' con los días de la semana (on Monday, on Friday, etc.).",
     categoria: "Prepositions of Time",
   },
   // Q32
@@ -88,7 +88,7 @@ export const preguntasPrepositions: Pregunta[] = [
     opciones: ["at", "on", "in"],
     correcta: 2,
     explicacion:
-      "We use 'in' with years (in 2003), months (in June), and longer periods.",
+      "Se usa 'in' con años (in 2003), meses (in June) y períodos más largos.",
     categoria: "Prepositions of Time",
   },
   // Q36
@@ -98,7 +98,7 @@ export const preguntasPrepositions: Pregunta[] = [
     opciones: ["on", "at", "in"],
     correcta: 2,
     explicacion:
-      "We use 'in' for enclosed spaces or buildings where someone works inside. 'In a hospital' means inside the building.",
+      "Se usa 'in' para espacios cerrados o edificios donde alguien trabaja dentro. 'In a hospital' significa dentro del edificio.",
     categoria: "Prepositions of Place",
   },
   // Q40
@@ -108,7 +108,7 @@ export const preguntasPrepositions: Pregunta[] = [
     opciones: ["under", "between", "among"],
     correcta: 0,
     explicacion:
-      "'Under' means below or beneath something. The cat is hiding below the bed.",
+      "'Under' significa debajo de algo. El gato está escondido debajo de la cama.",
     categoria: "Prepositions of Place",
   },
   // Q44
@@ -118,7 +118,7 @@ export const preguntasPrepositions: Pregunta[] = [
     opciones: ["in", "on", "at"],
     correcta: 0,
     explicacion:
-      "'In time' means 'early enough' or 'not late'. It is a fixed expression meaning she wasn't late for the interview.",
+      "'In time' significa 'con tiempo suficiente' o 'sin llegar tarde'. Es una expresión fija que indica que no llegó tarde a la entrevista.",
     categoria: "Prepositions of Time",
   },
   // Q48
@@ -128,7 +128,7 @@ export const preguntasPrepositions: Pregunta[] = [
     opciones: ["for", "at", "after"],
     correcta: 0,
     explicacion:
-      "'Look for' means to search for something. She is searching for her glasses.",
+      "'Look for' significa buscar algo. Está buscando sus gafas.",
     categoria: "Phrasal Verbs / Dependent Prepositions",
   },
   // Q54
@@ -138,7 +138,7 @@ export const preguntasPrepositions: Pregunta[] = [
     opciones: ["in", "on", "at"],
     correcta: 2,
     explicacion:
-      "We use 'at' to indicate arrival at a specific destination (at the hotel, at the airport).",
+      "Se usa 'at' para indicar la llegada a un destino específico (at the hotel, at the airport).",
     categoria: "Prepositions of Place",
   },
   // Q58
@@ -148,7 +148,7 @@ export const preguntasPrepositions: Pregunta[] = [
     opciones: ["of", "about", "for"],
     correcta: 2,
     explicacion:
-      "'Responsible for' is a fixed collocation meaning she is in charge of the children.",
+      "'Responsible for' es una colocación fija que significa que está a cargo de los niños.",
     categoria: "Dependent Prepositions",
   },
   // Q62
@@ -158,7 +158,7 @@ export const preguntasPrepositions: Pregunta[] = [
     opciones: ["in", "on", "at"],
     correcta: 2,
     explicacion:
-      "We say 'good at' or 'not good at' to describe ability. 'At' always follows good/bad in this context.",
+      "Se dice 'good at' o 'not good at' para describir habilidad. 'At' siempre sigue a good/bad en este contexto.",
     categoria: "Dependent Prepositions",
   },
   // Q66
@@ -168,7 +168,7 @@ export const preguntasPrepositions: Pregunta[] = [
     opciones: ["for", "during", "since"],
     correcta: 2,
     explicacion:
-      "'Since' is used with a specific point in time (since 2018). 'For' would be used with a duration.",
+      "'Since' se usa con un punto específico en el tiempo (since 2018). 'For' se usaría con una duración.",
     categoria: "Prepositions of Time",
   },
   // Q70
@@ -178,7 +178,7 @@ export const preguntasPrepositions: Pregunta[] = [
     opciones: ["in", "on", "at"],
     correcta: 0,
     explicacion:
-      "We use 'in' for enclosed or defined areas like a garden, a park, a room.",
+      "Se usa 'in' para áreas cerradas o delimitadas como un jardín, un parque o una habitación.",
     categoria: "Prepositions of Place",
   },
   // Q74
@@ -188,7 +188,7 @@ export const preguntasPrepositions: Pregunta[] = [
     opciones: ["at", "with", "on"],
     correcta: 1,
     explicacion:
-      "'Angry with' a person is the correct collocation. We can also say 'angry at' a situation.",
+      "'Angry with' una persona es la colocación correcta. También se puede decir 'angry at' ante una situación.",
     categoria: "Dependent Prepositions",
   },
   // Q78
@@ -198,7 +198,7 @@ export const preguntasPrepositions: Pregunta[] = [
     opciones: ["at", "in", "to"],
     correcta: 0,
     explicacion:
-      "We normally say 'arrive home' without a preposition, but if one is used, it is 'arrived at home'. Note: 'arrive home' (no preposition) is the most natural form.",
+      "Normalmente se dice 'arrive home' sin preposición, pero si se usa una, es 'arrived at home'. Nota: 'arrive home' (sin preposición) es la forma más natural.",
     categoria: "Prepositions of Place",
   },
   // Q82
@@ -208,7 +208,7 @@ export const preguntasPrepositions: Pregunta[] = [
     opciones: ["at", "in", "on"],
     correcta: 2,
     explicacion:
-      "'On' is used for surfaces. The clock is attached to the surface of the wall.",
+      "'On' se usa para superficies. El reloj está colgado en la superficie de la pared.",
     categoria: "Prepositions of Place",
   },
   // Q86
@@ -218,7 +218,7 @@ export const preguntasPrepositions: Pregunta[] = [
     opciones: ["at", "in", "on"],
     correcta: 1,
     explicacion:
-      "'Interested in' is a fixed collocation. We always use 'in' after 'interested'.",
+      "'Interested in' es una colocación fija. Siempre se usa 'in' después de 'interested'.",
     categoria: "Dependent Prepositions",
   },
   // Q90
@@ -228,7 +228,7 @@ export const preguntasPrepositions: Pregunta[] = [
     opciones: ["in", "at", "on"],
     correcta: 2,
     explicacion:
-      "'On' is used for surfaces. The dog is lying on the surface of the sofa.",
+      "'On' se usa para superficies. El perro está tumbado sobre la superficie del sofá.",
     categoria: "Prepositions of Place",
   },
   // Q94
@@ -238,7 +238,7 @@ export const preguntasPrepositions: Pregunta[] = [
     opciones: ["at", "in", "on"],
     correcta: 0,
     explicacion:
-      "'At' is commonly used with companies and organizations (at Google, at a company). 'In' is also possible when emphasizing being inside.",
+      "'At' se usa comúnmente con empresas y organizaciones (at Google, at a company). 'In' también es posible cuando se enfatiza estar dentro.",
     categoria: "Prepositions of Place",
   },
   // Q98
@@ -248,7 +248,7 @@ export const preguntasPrepositions: Pregunta[] = [
     opciones: ["for", "about", "of"],
     correcta: 0,
     explicacion:
-      "'Apologize for' is the fixed collocation. We always apologize for something.",
+      "'Apologize for' es la colocación fija. Siempre se pide disculpas por algo.",
     categoria: "Dependent Prepositions",
   },
   // Q100
@@ -258,7 +258,7 @@ export const preguntasPrepositions: Pregunta[] = [
     opciones: ["must", "may", "have to"],
     correcta: 1,
     explicacion:
-      "'May' gives permission. The sentence allows the person to leave early if they choose to.",
+      "'May' da permiso. La frase permite a la persona marcharse antes si lo desea.",
     categoria: "Modals – Permission",
   },
 ];

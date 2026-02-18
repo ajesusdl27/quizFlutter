@@ -24,7 +24,7 @@ export const preguntasConditionals: Pregunta[] = [
     opciones: ["rains", "rained", "would rain"],
     correcta: 0,
     explicacion:
-      "First Conditional: If + present simple, will + infinitive. 'If it rains' is the correct form for a real future possibility.",
+      "Primera condicional: If + presente simple, will + infinitivo. 'If it rains' es la forma correcta para una posibilidad real en el futuro.",
     categoria: "First Conditional",
   },
   // Q7
@@ -34,7 +34,7 @@ export const preguntasConditionals: Pregunta[] = [
     opciones: ["will", "would", "can"],
     correcta: 1,
     explicacion:
-      "Second Conditional: If + past simple, would + infinitive. Used for hypothetical or unreal present situations.",
+      "Segunda condicional: If + pasado simple, would + infinitivo. Se usa para situaciones hipotéticas o irreales en el presente.",
     categoria: "Second Conditional",
   },
   // Q11
@@ -44,7 +44,7 @@ export const preguntasConditionals: Pregunta[] = [
     opciones: ["arrive", "would arrive", "would have arrived"],
     correcta: 2,
     explicacion:
-      "Third Conditional: If + past perfect, would have + past participle. Used for unreal past situations.",
+      "Tercera condicional: If + past perfect, would have + participio. Se usa para situaciones irreales en el pasado.",
     categoria: "Third Conditional",
   },
   // Q15
@@ -54,7 +54,7 @@ export const preguntasConditionals: Pregunta[] = [
     opciones: ["miss", "would miss", "will miss"],
     correcta: 2,
     explicacion:
-      "First Conditional: If + present simple, will + infinitive. A real warning about a future consequence.",
+      "Primera condicional: If + presente simple, will + infinitivo. Una advertencia real sobre una consecuencia futura.",
     categoria: "First Conditional",
   },
   // Q19
@@ -64,7 +64,7 @@ export const preguntasConditionals: Pregunta[] = [
     opciones: ["have", "had", "will have"],
     correcta: 1,
     explicacion:
-      "Second Conditional: If + past simple, would + infinitive. 'Had' is the past simple form used for an unreal present situation.",
+      "Segunda condicional: If + pasado simple, would + infinitivo. 'Had' es la forma de pasado simple usada para una situación irreal en el presente.",
     categoria: "Second Conditional",
   },
   // Q23
@@ -74,7 +74,7 @@ export const preguntasConditionals: Pregunta[] = [
     opciones: ["would", "will", "went"],
     correcta: 1,
     explicacion:
-      "First Conditional: If + present simple, will + infinitive. A real possibility about the near future.",
+      "Primera condicional: If + presente simple, will + infinitivo. Una posibilidad real sobre el futuro cercano.",
     categoria: "First Conditional",
   },
   // Q27
@@ -84,7 +84,7 @@ export const preguntasConditionals: Pregunta[] = [
     opciones: ["passes", "would pass", "would have passed"],
     correcta: 2,
     explicacion:
-      "Third Conditional: If + past perfect, would have + past participle. An unreal past situation — she didn't study enough.",
+      "Tercera condicional: If + past perfect, would have + participio. Una situación irreal en el pasado: ella no estudió suficiente.",
     categoria: "Third Conditional",
   },
   // Q31
@@ -94,7 +94,7 @@ export const preguntasConditionals: Pregunta[] = [
     opciones: ["take", "would take", "will take"],
     correcta: 2,
     explicacion:
-      "First Conditional: If + present simple, will + infinitive. A real plan if a real event occurs.",
+      "Primera condicional: If + presente simple, will + infinitivo. Un plan real si ocurre un evento real.",
     categoria: "First Conditional",
   },
   // Q35
@@ -104,7 +104,7 @@ export const preguntasConditionals: Pregunta[] = [
     opciones: ["am", "was", "were"],
     correcta: 2,
     explicacion:
-      "Second Conditional: 'If I were you' is the correct form (subjunctive mood), even though 'was' is sometimes used informally.",
+      "Segunda condicional: 'If I were you' es la forma correcta (modo subjuntivo), aunque 'was' se usa a veces de forma informal.",
     categoria: "Second Conditional",
   },
   // Q39
@@ -114,7 +114,7 @@ export const preguntasConditionals: Pregunta[] = [
     opciones: ["would", "will", "would have"],
     correcta: 1,
     explicacion:
-      "First Conditional: If + present simple, will + infinitive. A real possibility depending on his effort.",
+      "Primera condicional: If + presente simple, will + infinitivo. Una posibilidad real que depende de su esfuerzo.",
     categoria: "First Conditional",
   },
   // Q43
@@ -124,7 +124,7 @@ export const preguntasConditionals: Pregunta[] = [
     opciones: ["are", "would be", "would have been"],
     correcta: 2,
     explicacion:
-      "Third Conditional: If + past perfect, would have + past participle. They didn't know the truth, so this is an unreal past.",
+      "Tercera condicional: If + past perfect, would have + participio. Ellos no sabían la verdad, por eso es una situación irreal en el pasado.",
     categoria: "Third Conditional",
   },
   // Q47
@@ -134,7 +134,7 @@ export const preguntasConditionals: Pregunta[] = [
     opciones: ["melts", "would melt", "melted"],
     correcta: 0,
     explicacion:
-      "Zero Conditional: If + present simple, present simple. Used for scientific facts and general truths.",
+      "Condicional cero: If + presente simple, presente simple. Se usa para hechos científicos y verdades generales.",
     categoria: "Zero Conditional",
   },
   // Q53
@@ -144,7 +144,7 @@ export const preguntasConditionals: Pregunta[] = [
     opciones: ["leaves", "left", "had left"],
     correcta: 2,
     explicacion:
-      "Mixed Conditional: If + past perfect, would + infinitive (now). Past action affecting a present result.",
+      "Condicional mixto: If + past perfect, would + infinitivo (ahora). Una acción pasada que afecta a un resultado presente.",
     categoria: "Mixed Conditional",
   },
   // Q57
@@ -154,7 +154,7 @@ export const preguntasConditionals: Pregunta[] = [
     opciones: ["tell", "would tell", "would have told"],
     correcta: 2,
     explicacion:
-      "Third Conditional: If + past perfect, would have + past participle. An unreal past — I didn't know.",
+      "Tercera condicional: If + past perfect, would have + participio. Una situación irreal en el pasado: yo no lo sabía.",
     categoria: "Third Conditional",
   },
   // Q61
@@ -164,7 +164,7 @@ export const preguntasConditionals: Pregunta[] = [
     opciones: ["sit", "will sit", "would sit"],
     correcta: 2,
     explicacion:
-      "Second Conditional: If + past simple (were), would + infinitive. An unreal present — it is not warm enough.",
+      "Segunda condicional: If + pasado simple (were), would + infinitivo. Una situación irreal en el presente: no hace suficiente calor.",
     categoria: "Second Conditional",
   },
   // Q65
@@ -174,7 +174,7 @@ export const preguntasConditionals: Pregunta[] = [
     opciones: ["pay", "paid", "would pay"],
     correcta: 1,
     explicacion:
-      "Second Conditional: If + past simple, would + infinitive. An unreal present — you are not paying attention now.",
+      "Segunda condicional: If + pasado simple, would + infinitivo. Una situación irreal en el presente: no estás prestando atención ahora.",
     categoria: "Second Conditional",
   },
   // Q69
@@ -184,7 +184,7 @@ export const preguntasConditionals: Pregunta[] = [
     opciones: ["would", "will", "would have"],
     correcta: 1,
     explicacion:
-      "First Conditional: If + present simple, will + infinitive. A real possibility about the immediate future.",
+      "Primera condicional: If + presente simple, will + infinitivo. Una posibilidad real sobre el futuro inmediato.",
     categoria: "First Conditional",
   },
   // Q73
@@ -194,7 +194,7 @@ export const preguntasConditionals: Pregunta[] = [
     opciones: ["buy", "will buy", "would buy"],
     correcta: 2,
     explicacion:
-      "Second Conditional: If + past simple, would + infinitive. An unreal present — I don't have enough money.",
+      "Segunda condicional: If + pasado simple, would + infinitivo. Una situación irreal en el presente: no tengo suficiente dinero.",
     categoria: "Second Conditional",
   },
   // Q77
@@ -204,7 +204,7 @@ export const preguntasConditionals: Pregunta[] = [
     opciones: ["get", "would get", "got"],
     correcta: 0,
     explicacion:
-      "Zero/First Conditional: This can be a general truth (zero) or a warning (first). 'You get cold' works as a zero conditional for a general fact.",
+      "Condicional cero/primera: Puede ser una verdad general (cero) o una advertencia (primera). 'You get cold' funciona como condicional cero para un hecho general.",
     categoria: "Zero Conditional",
   },
   // Q81
@@ -214,7 +214,7 @@ export const preguntasConditionals: Pregunta[] = [
     opciones: ["isn't", "wouldn't be", "won't be"],
     correcta: 1,
     explicacion:
-      "Mixed Conditional: If + past perfect, would + infinitive (now). Past action with a present consequence.",
+      "Condicional mixto: If + past perfect, would + infinitivo (ahora). Una acción pasada con una consecuencia en el presente.",
     categoria: "Mixed Conditional",
   },
   // Q85
@@ -224,7 +224,7 @@ export const preguntasConditionals: Pregunta[] = [
     opciones: ["leave", "left", "had left"],
     correcta: 2,
     explicacion:
-      "Mixed Conditional: If + past perfect, would + infinitive (now). A past action affecting a present situation.",
+      "Condicional mixto: If + past perfect, would + infinitivo (ahora). Una acción pasada que afecta a una situación presente.",
     categoria: "Mixed Conditional",
   },
   // Q89
@@ -234,7 +234,7 @@ export const preguntasConditionals: Pregunta[] = [
     opciones: ["would", "will", "would have"],
     correcta: 1,
     explicacion:
-      "First Conditional: If + present simple, will + infinitive. A real future possibility.",
+      "Primera condicional: If + presente simple, will + infinitivo. Una posibilidad real en el futuro.",
     categoria: "First Conditional",
   },
   // Q93
@@ -244,7 +244,7 @@ export const preguntasConditionals: Pregunta[] = [
     opciones: ["arrive", "would arrive", "would have arrived"],
     correcta: 2,
     explicacion:
-      "Third Conditional: If + past perfect, would have + past participle. They didn't take a taxi — an unreal past situation.",
+      "Tercera condicional: If + past perfect, would have + participio. No cogieron un taxi: es una situación irreal en el pasado.",
     categoria: "Third Conditional",
   },
   // Q97
@@ -254,7 +254,7 @@ export const preguntasConditionals: Pregunta[] = [
     opciones: ["get", "would get", "got"],
     correcta: 0,
     explicacion:
-      "Zero Conditional: If + present simple, present simple. This is a scientific fact that is always true.",
+      "Condicional cero: If + presente simple, presente simple. Es un hecho científico que siempre es verdad.",
     categoria: "Zero Conditional",
   },
   // Combined Q (additional)
@@ -264,7 +264,7 @@ export const preguntasConditionals: Pregunta[] = [
     opciones: ["left", "had left", "leave"],
     correcta: 1,
     explicacion:
-      "Mixed Conditional: If + past perfect, would + infinitive (present). The past action of not leaving earlier causes the present result of being late.",
+      "Condicional mixto: If + past perfect, would + infinitivo (presente). La acción pasada de no haber salido antes causa el resultado presente de llegar tarde.",
     categoria: "Mixed Conditional",
   },
 ];

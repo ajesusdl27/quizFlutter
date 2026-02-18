@@ -24,7 +24,7 @@ export const preguntasRelatives: Pregunta[] = [
     opciones: ["which", "who", "whose"],
     correcta: 1,
     explicacion:
-      "'Who' is used for people as the subject of a relative clause. The man is a person, so we use 'who'.",
+      "'Who' se usa para personas como sujeto de una oración de relativo. 'The man' es una persona, por eso usamos 'who'.",
     categoria: "Who – People",
   },
   // Q6
@@ -34,7 +34,7 @@ export const preguntasRelatives: Pregunta[] = [
     opciones: ["who", "where", "that"],
     correcta: 2,
     explicacion:
-      "'That' (or 'which') is used for things. The film is a thing, so we use 'that'.",
+      "'That' (o 'which') se usa para cosas. 'The film' es una cosa, por eso usamos 'that'.",
     categoria: "That / Which – Things",
   },
   // Q10
@@ -44,7 +44,7 @@ export const preguntasRelatives: Pregunta[] = [
     opciones: ["which", "who", "where"],
     correcta: 2,
     explicacion:
-      "'Where' is used for places. 'The place where we met' refers to a location.",
+      "'Where' se usa para lugares. 'The place where we met' hace referencia a una ubicación.",
     categoria: "Where – Places",
   },
   // Q14
@@ -54,7 +54,7 @@ export const preguntasRelatives: Pregunta[] = [
     opciones: ["who", "which", "whose"],
     correcta: 2,
     explicacion:
-      "'Whose' indicates possession. The bag belongs to the woman, so 'whose' is correct.",
+      "'Whose' indica posesión. El bolso pertenece a la mujer, por eso 'whose' es correcto.",
     categoria: "Whose – Possession",
   },
   // Q18
@@ -64,7 +64,7 @@ export const preguntasRelatives: Pregunta[] = [
     opciones: ["which", "who", "why"],
     correcta: 2,
     explicacion:
-      "'Why' is used after 'reason' to explain a cause. 'The reason why' is a common construction.",
+      "'Why' se usa después de 'reason' para explicar una causa. 'The reason why' es una construcción muy común.",
     categoria: "Why – Reasons",
   },
   // Q22
@@ -74,7 +74,7 @@ export const preguntasRelatives: Pregunta[] = [
     opciones: ["which", "who", "whose"],
     correcta: 1,
     explicacion:
-      "'Who' is used for people as the subject. The student is a person who performed an action.",
+      "'Who' se usa para personas como sujeto. El estudiante es una persona que realizó una acción.",
     categoria: "Who – People",
   },
   // Q26
@@ -84,7 +84,7 @@ export const preguntasRelatives: Pregunta[] = [
     opciones: ["who", "whose", "that"],
     correcta: 2,
     explicacion:
-      "'That' (or 'which') is used for things. The book is a thing, so we use 'that'.",
+      "'That' (o 'which') se usa para cosas. El libro es una cosa, por eso usamos 'that'.",
     categoria: "That / Which – Things",
   },
   // Q30
@@ -94,7 +94,7 @@ export const preguntasRelatives: Pregunta[] = [
     opciones: ["who", "which", "where"],
     correcta: 0,
     explicacion:
-      "'Who' is used for people. The teacher is a person who performed the action of helping.",
+      "'Who' se usa para personas. El profesor es una persona que realizó la acción de ayudar.",
     categoria: "Who – People",
   },
   // Q34
@@ -104,7 +104,7 @@ export const preguntasRelatives: Pregunta[] = [
     opciones: ["which", "who", "whose"],
     correcta: 2,
     explicacion:
-      "'Whose' shows possession. The roof belongs to the house, so 'whose' is correct.",
+      "'Whose' indica posesión. El tejado pertenece a la casa, por eso 'whose' es correcto.",
     categoria: "Whose – Possession",
   },
   // Q38
@@ -114,7 +114,7 @@ export const preguntasRelatives: Pregunta[] = [
     opciones: ["which", "who", "where"],
     correcta: 1,
     explicacion:
-      "'Who' is used for people. 'Someone' refers to a person, so we use 'who'.",
+      "'Who' se usa para personas. 'Someone' hace referencia a una persona, por eso usamos 'who'.",
     categoria: "Who – People",
   },
   // Q42
@@ -124,7 +124,7 @@ export const preguntasRelatives: Pregunta[] = [
     opciones: ["who", "where", "which"],
     correcta: 1,
     explicacion:
-      "'Where' is used for places. The restaurant is a place where an action happened.",
+      "'Where' se usa para lugares. El restaurante es un lugar donde ocurrió una acción.",
     categoria: "Where – Places",
   },
   // Q46
@@ -134,7 +134,7 @@ export const preguntasRelatives: Pregunta[] = [
     opciones: ["who", "which", "whose"],
     correcta: 2,
     explicacion:
-      "'Whose' shows possession. The brother belongs to the girl, so 'whose' is correct.",
+      "'Whose' indica posesión. El hermano pertenece a la chica, por eso 'whose' es correcto.",
     categoria: "Whose – Possession",
   },
   // Q49
@@ -144,7 +144,7 @@ export const preguntasRelatives: Pregunta[] = [
     opciones: ["who", "which", "why"],
     correcta: 2,
     explicacion:
-      "'Why' is used after 'reason'. 'The reason why I called' explains the cause.",
+      "'Why' se usa después de 'reason'. 'The reason why I called' explica la causa.",
     categoria: "Why – Reasons",
   },
   // Q52
@@ -154,7 +154,7 @@ export const preguntasRelatives: Pregunta[] = [
     opciones: ["who", "whose", "which"],
     correcta: 1,
     explicacion:
-      "'Whose' indicates possession. The car belongs to the man, so 'whose' is correct.",
+      "'Whose' indica posesión. El coche pertenece al hombre, por eso 'whose' es correcto.",
     categoria: "Whose – Possession",
   },
   // Q56
@@ -164,7 +164,7 @@ export const preguntasRelatives: Pregunta[] = [
     opciones: ["who", "that", "whose"],
     correcta: 1,
     explicacion:
-      "'That' (or 'which') is used for things. The movie is a thing, so we use 'that'.",
+      "'That' (o 'which') se usa para cosas. La película es una cosa, por eso usamos 'that'.",
     categoria: "That / Which – Things",
   },
   // Q60
@@ -174,7 +174,7 @@ export const preguntasRelatives: Pregunta[] = [
     opciones: ["who", "which", "whose"],
     correcta: 1,
     explicacion:
-      "'Which' is used for things as the subject. The picture is a thing performing the role of subject.",
+      "'Which' se usa para cosas como sujeto. El cuadro es una cosa que actúa como sujeto de la oración.",
     categoria: "That / Which – Things",
   },
   // Q64
@@ -184,7 +184,7 @@ export const preguntasRelatives: Pregunta[] = [
     opciones: ["which", "who", "whose"],
     correcta: 1,
     explicacion:
-      "'Who' is used for people. The person is the subject of the relative clause.",
+      "'Who' se usa para personas. La persona es el sujeto de la oración de relativo.",
     categoria: "Who – People",
   },
   // Q68
@@ -194,7 +194,7 @@ export const preguntasRelatives: Pregunta[] = [
     opciones: ["which", "why", "who"],
     correcta: 1,
     explicacion:
-      "'Why' is used after 'reason' to express a cause. 'The reason why she failed' is correct.",
+      "'Why' se usa después de 'reason' para expresar una causa. 'The reason why she failed' es correcto.",
     categoria: "Why – Reasons",
   },
   // Q72
@@ -204,7 +204,7 @@ export const preguntasRelatives: Pregunta[] = [
     opciones: ["who", "that", "whose"],
     correcta: 1,
     explicacion:
-      "'That' (or 'which') is used for things. The song is a thing, so we use 'that'.",
+      "'That' (o 'which') se usa para cosas. La canción es una cosa, por eso usamos 'that'.",
     categoria: "That / Which – Things",
   },
   // Q76
@@ -214,7 +214,7 @@ export const preguntasRelatives: Pregunta[] = [
     opciones: ["who", "where", "that"],
     correcta: 2,
     explicacion:
-      "'That' (or 'which') is used for things. Here the house is the object of the relative clause.",
+      "'That' (o 'which') se usa para cosas. Aquí la casa es el objeto de la oración de relativo.",
     categoria: "That / Which – Things",
   },
   // Q80
@@ -224,7 +224,7 @@ export const preguntasRelatives: Pregunta[] = [
     opciones: ["which", "who", "where"],
     correcta: 1,
     explicacion:
-      "'Who' is used for people. The woman is a person who is the subject of the relative clause.",
+      "'Who' se usa para personas. La mujer es una persona que actúa como sujeto de la oración de relativo.",
     categoria: "Who – People",
   },
   // Q84
@@ -234,7 +234,7 @@ export const preguntasRelatives: Pregunta[] = [
     opciones: ["who", "which", "whose"],
     correcta: 2,
     explicacion:
-      "'Whose' shows possession. The bike belongs to the boy, so 'whose' is correct.",
+      "'Whose' indica posesión. La bicicleta pertenece al chico, por eso 'whose' es correcto.",
     categoria: "Whose – Possession",
   },
   // Q88
@@ -244,7 +244,7 @@ export const preguntasRelatives: Pregunta[] = [
     opciones: ["which", "where", "who"],
     correcta: 1,
     explicacion:
-      "'Where' is used for places. The café is a place where the action of meeting happened.",
+      "'Where' se usa para lugares. El café es un lugar donde ocurrió la acción de quedar.",
     categoria: "Where – Places",
   },
   // Q92
@@ -254,7 +254,7 @@ export const preguntasRelatives: Pregunta[] = [
     opciones: ["who", "whose", "where"],
     correcta: 0,
     explicacion:
-      "'Who' (or 'that') is used when referring to people. 'The friend who I told you about' is correct.",
+      "'Who' (o 'that') se usa para referirse a personas. 'The friend who I told you about' es correcto.",
     categoria: "Who – People",
   },
   // Q96
@@ -264,7 +264,7 @@ export const preguntasRelatives: Pregunta[] = [
     opciones: ["who", "which", "whose"],
     correcta: 0,
     explicacion:
-      "'Who' is used for people as the subject. The boy is a person who won the race.",
+      "'Who' se usa para personas como sujeto. El chico es una persona que ganó la carrera.",
     categoria: "Who – People",
   },
 ];

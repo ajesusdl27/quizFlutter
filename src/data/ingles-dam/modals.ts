@@ -18,7 +18,7 @@ export const preguntasModals: Pregunta[] = [
     opciones: ["might", "must", "could"],
     correcta: 1,
     explicacion:
-      "'Must' expresses strong obligation. The sentence implies it is necessary to finish before the bell rings.",
+      "'Must' expresa obligación fuerte. La frase implica que es necesario terminar antes de que suene el timbre.",
     categoria: "Modals – Obligation",
   },
   // Q5
@@ -28,7 +28,7 @@ export const preguntasModals: Pregunta[] = [
     opciones: ["shouldn't", "mustn't", "don't have to"],
     correcta: 1,
     explicacion:
-      "'Mustn't' expresses prohibition. 'It's forbidden' confirms that parking is not allowed.",
+      "'Mustn't' expresa prohibición. 'It's forbidden' confirma que aparcar está prohibido.",
     categoria: "Modals – Prohibition",
   },
   // Q9
@@ -38,7 +38,7 @@ export const preguntasModals: Pregunta[] = [
     opciones: ["can't", "must", "shouldn't"],
     correcta: 1,
     explicacion:
-      "'Must' is used for logical deduction. The lights being on is strong evidence she is home.",
+      "'Must' se usa para deducción lógica. Que las luces estén encendidas es una evidencia sólida de que está en casa.",
     categoria: "Modals – Deduction",
   },
   // Q13
@@ -48,7 +48,7 @@ export const preguntasModals: Pregunta[] = [
     opciones: ["should", "might", "can"],
     correcta: 0,
     explicacion:
-      "'Should' is used for advice or recommendation. It advises caution when handling the machine.",
+      "'Should' se usa para dar consejos o recomendaciones. Aconseja tener cuidado al manejar la máquina.",
     categoria: "Modals – Advice",
   },
   // Q17
@@ -58,7 +58,7 @@ export const preguntasModals: Pregunta[] = [
     opciones: ["must", "can", "shouldn't"],
     correcta: 1,
     explicacion:
-      "'Can' expresses ability. The sentence describes his ability to speak English fluently.",
+      "'Can' expresa habilidad. La frase describe su capacidad para hablar inglés con fluidez.",
     categoria: "Modals – Ability",
   },
   // Q21
@@ -68,7 +68,7 @@ export const preguntasModals: Pregunta[] = [
     opciones: ["could", "might", "must"],
     correcta: 2,
     explicacion:
-      "'Must' expresses obligation or a rule. Being quiet in the library is a general rule.",
+      "'Must' expresa obligación o una norma. Guardar silencio en la biblioteca es una regla general.",
     categoria: "Modals – Obligation",
   },
   // Q25
@@ -78,7 +78,7 @@ export const preguntasModals: Pregunta[] = [
     opciones: ["must", "might", "can't"],
     correcta: 1,
     explicacion:
-      "'Might' expresses possibility or uncertainty. 'He's not sure' confirms it is uncertain.",
+      "'Might' expresa posibilidad o incertidumbre. 'He's not sure' confirma que es algo incierto.",
     categoria: "Modals – Possibility",
   },
   // Q29
@@ -88,7 +88,7 @@ export const preguntasModals: Pregunta[] = [
     opciones: ["mustn't", "don't have to", "might not"],
     correcta: 0,
     explicacion:
-      "'Mustn't' expresses prohibition. Using a phone during an exam is strictly forbidden.",
+      "'Mustn't' expresa prohibición. Usar el móvil durante un examen está estrictamente prohibido.",
     categoria: "Modals – Prohibition",
   },
   // Q33
@@ -98,7 +98,7 @@ export const preguntasModals: Pregunta[] = [
     opciones: ["must", "can't", "shouldn't"],
     correcta: 0,
     explicacion:
-      "'Must' is used for logical deduction. A long trip naturally leads to tiredness.",
+      "'Must' se usa para deducción lógica. Un viaje largo lleva naturalmente al cansancio.",
     categoria: "Modals – Deduction",
   },
   // Q37
@@ -108,7 +108,7 @@ export const preguntasModals: Pregunta[] = [
     opciones: ["can", "have to", "might"],
     correcta: 1,
     explicacion:
-      "'Have to' expresses external obligation. Schools that require uniforms impose this rule.",
+      "'Have to' expresa obligación externa. Los colegios que exigen uniforme imponen esta norma.",
     categoria: "Modals – Obligation",
   },
   // Q41
@@ -118,7 +118,7 @@ export const preguntasModals: Pregunta[] = [
     opciones: ["must", "don't have to", "mustn't"],
     correcta: 2,
     explicacion:
-      "'Mustn't' expresses prohibition. 'It's dangerous' means touching the wire is forbidden.",
+      "'Mustn't' expresa prohibición. 'It's dangerous' significa que tocar el cable está prohibido.",
     categoria: "Modals – Prohibition",
   },
   // Q45
@@ -128,7 +128,7 @@ export const preguntasModals: Pregunta[] = [
     opciones: ["must", "shouldn't", "can't"],
     correcta: 0,
     explicacion:
-      "'Must' expresses a strong deduction. The speaker believes he is certainly joking.",
+      "'Must' expresa una deducción fuerte. El hablante cree que definitivamente está bromeando.",
     categoria: "Modals – Deduction",
   },
   // Q50
@@ -138,7 +138,7 @@ export const preguntasModals: Pregunta[] = [
     opciones: ["have to", "may", "mustn't"],
     correcta: 1,
     explicacion:
-      "'May' gives permission. The speaker is allowing the other person to borrow notes.",
+      "'May' da permiso. El hablante está permitiendo a la otra persona tomar prestados sus apuntes.",
     categoria: "Modals – Permission",
   },
   // Q51
@@ -148,7 +148,7 @@ export const preguntasModals: Pregunta[] = [
     opciones: ["might", "mustn't", "shouldn't"],
     correcta: 0,
     explicacion:
-      "'Might' expresses possibility. It is possible but not certain that he will finish today.",
+      "'Might' expresa posibilidad. Es posible, pero no seguro, que termine hoy.",
     categoria: "Modals – Possibility",
   },
   // Q55
@@ -158,7 +158,7 @@ export const preguntasModals: Pregunta[] = [
     opciones: ["must", "mustn't", "don't have to"],
     correcta: 1,
     explicacion:
-      "'Mustn't' expresses prohibition. A secret must not be shared with anyone.",
+      "'Mustn't' expresa prohibición. Un secreto no debe compartirse con nadie.",
     categoria: "Modals – Prohibition",
   },
   // Q59
@@ -168,7 +168,7 @@ export const preguntasModals: Pregunta[] = [
     opciones: ["can", "could", "must"],
     correcta: 1,
     explicacion:
-      "'Could' expresses past ability. He had the ability to run fast when he was young.",
+      "'Could' expresa habilidad en el pasado. Tenía la capacidad de correr rápido cuando era joven.",
     categoria: "Modals – Past Ability",
   },
   // Q63
@@ -178,7 +178,7 @@ export const preguntasModals: Pregunta[] = [
     opciones: ["must", "mustn't", "don't have to"],
     correcta: 2,
     explicacion:
-      "'Don't have to' expresses lack of obligation. It is not necessary to finish today.",
+      "'Don't have to' expresa falta de obligación. No es necesario terminar hoy.",
     categoria: "Modals – No Obligation",
   },
   // Q67
@@ -188,7 +188,7 @@ export const preguntasModals: Pregunta[] = [
     opciones: ["must", "can't", "should"],
     correcta: 1,
     explicacion:
-      "'Can't' expresses impossibility based on deduction. It is logically impossible they are at work on Sunday.",
+      "'Can't' expresa imposibilidad basada en deducción. Es lógicamente imposible que estén trabajando un domingo.",
     categoria: "Modals – Deduction",
   },
   // Q71
@@ -198,7 +198,7 @@ export const preguntasModals: Pregunta[] = [
     opciones: ["shouldn't", "can", "might"],
     correcta: 0,
     explicacion:
-      "'Shouldn't' gives advice against doing something. Interrupting is considered rude.",
+      "'Shouldn't' da un consejo en contra de hacer algo. Interrumpir se considera una falta de educación.",
     categoria: "Modals – Advice",
   },
   // Q75
@@ -208,7 +208,7 @@ export const preguntasModals: Pregunta[] = [
     opciones: ["must", "can't", "shouldn't"],
     correcta: 1,
     explicacion:
-      "'Can't' expresses impossibility. The fact that nobody believes him suggests he cannot be serious.",
+      "'Can't' expresa imposibilidad. El hecho de que nadie le crea sugiere que no puede estar hablando en serio.",
     categoria: "Modals – Deduction",
   },
   // Q79
@@ -218,7 +218,7 @@ export const preguntasModals: Pregunta[] = [
     opciones: ["mustn't", "don't have to", "may"],
     correcta: 2,
     explicacion:
-      "'May' gives permission. The sentence means you are allowed to use a dictionary.",
+      "'May' da permiso. La frase significa que se te permite usar un diccionario.",
     categoria: "Modals – Permission",
   },
   // Q83
@@ -228,7 +228,7 @@ export const preguntasModals: Pregunta[] = [
     opciones: ["can", "had to", "must"],
     correcta: 1,
     explicacion:
-      "'Had to' is the past form of 'must/have to' for obligation. She was obliged to speak to the teacher.",
+      "'Had to' es la forma de pasado de 'must/have to' para obligación. Estaba obligada a hablar con el profesor.",
     categoria: "Modals – Past Obligation",
   },
   // Q87
@@ -238,7 +238,7 @@ export const preguntasModals: Pregunta[] = [
     opciones: ["must", "shouldn't", "have to"],
     correcta: 1,
     explicacion:
-      "'Shouldn't' gives advice. Because it is cold, the advice is to not open the window.",
+      "'Shouldn't' da un consejo. Como hace frío, el consejo es no abrir la ventana.",
     categoria: "Modals – Advice",
   },
   // Q91
@@ -248,7 +248,7 @@ export const preguntasModals: Pregunta[] = [
     opciones: ["might", "have to", "can"],
     correcta: 1,
     explicacion:
-      "'Have to' expresses obligation. You are required to finish the exam before you can leave.",
+      "'Have to' expresa obligación. Es obligatorio terminar el examen antes de poder marcharse.",
     categoria: "Modals – Obligation",
   },
   // Q95+100
@@ -258,7 +258,7 @@ export const preguntasModals: Pregunta[] = [
     opciones: ["must", "can't", "shouldn't"],
     correcta: 0,
     explicacion:
-      "'Must' is used for strong deduction. After a long journey, being exhausted is a logical conclusion.",
+      "'Must' se usa para deducción fuerte. Después de un viaje largo, estar agotado es una conclusión lógica.",
     categoria: "Modals – Deduction",
   },
 ];

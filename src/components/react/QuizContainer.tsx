@@ -191,8 +191,10 @@ export default function QuizContainer({ preguntas, unidadTitulo, unidadColor }: 
             {preguntaActual + 1}
           </span>
           <div>
-            <span className="text-xs text-slate-400 uppercase tracking-wider">{pregunta.categoria}</span>
-            <h3 className="text-xl font-semibold mt-1">{pregunta.pregunta}</h3>
+            {estado.respondida && (
+              <span className="text-xs text-slate-400 uppercase tracking-wider">{pregunta.categoria}</span>
+            )}
+            <h3 className={`text-xl font-semibold ${estado.respondida ? 'mt-1' : ''}`}>{pregunta.pregunta}</h3>
           </div>
         </div>
 
