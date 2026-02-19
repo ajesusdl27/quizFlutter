@@ -1,195 +1,168 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import AsignaturaCard from "../components/AsignaturaCard.astro";
-import {
-  asignaturas,
-  obtenerEstadisticasGlobales,
-  obtenerEstadisticasAsignatura,
-} from "../data";
+import Layout from '../layouts/Layout.astro';
+import AsignaturaCard from '../components/AsignaturaCard.astro';
+import { asignaturas, obtenerEstadisticasGlobales, obtenerEstadisticasAsignatura, examen, preguntasExamenes } from '../data';
 
 const estadisticas = obtenerEstadisticasGlobales();
-const asignaturasConStats = asignaturas.map((asig) => {
+const asignaturasConStats = asignaturas.map(asig => {
   const stats = obtenerEstadisticasAsignatura(asig.id);
   return {
     asignatura: asig,
-    ...stats,
+    ...stats
   };
 });
+
+// Añadir exámenes al conteo
+const totalPreguntasConExamenes = estadisticas.totalPreguntas + preguntasExamenes['examen-anterior'].length;
 ---
 
-<Layout
-  title="Quiz 2º DAM - Test Interactivo para Desarrollo de Aplicaciones Multiplataforma"
->
+<Layout title="Quiz 2º DAM - Test Interactivo para Desarrollo de Aplicaciones Multiplataforma">
   <!-- Hero Section con efecto visual mejorado -->
   <section class="text-center mb-16 relative">
     <!-- Elementos decorativos de fondo -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none">
-      <div
-        class="absolute top-20 left-10 w-72 h-72 bg-cyan-500/20 rounded-full blur-3xl"
-      >
-      </div>
-      <div
-        class="absolute top-40 right-10 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"
-      >
-      </div>
-      <div
-        class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-64 bg-blue-500/10 rounded-full blur-3xl"
-      >
-      </div>
+      <div class="absolute top-20 left-10 w-72 h-72 bg-cyan-500/20 rounded-full blur-3xl"></div>
+      <div class="absolute top-40 right-10 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
     </div>
-
+    
     <div class="max-w-4xl mx-auto relative">
       <div class="animate-float mb-6">
         <span class="text-8xl drop-shadow-2xl">🎓</span>
       </div>
-
+      
       <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">
         <span class="text-shimmer">Quiz 2º DAM</span>
       </h1>
-
+      
       <p class="text-2xl md:text-3xl text-slate-200 mb-4 font-medium">
         Test Interactivo para todas tus asignaturas
       </p>
-
+      
       <p class="text-lg text-slate-400 mb-10 max-w-2xl mx-auto">
-        Domina el curso con <span class="text-white font-bold text-xl"
-          >{estadisticas.totalPreguntas}</span
-        > preguntas distribuidas en <span class="text-white font-bold text-xl"
-          >{estadisticas.totalAsignaturas} asignaturas</span
-        >
-        y <span class="text-white font-bold text-xl"
-          >{estadisticas.totalTemas} temas</span
-        >
+        Domina el curso con <span class="text-white font-bold text-xl">{totalPreguntasConExamenes}</span> preguntas 
+        distribuidas en <span class="text-white font-bold text-xl">{estadisticas.totalAsignaturas} asignaturas</span> 
+        y <span class="text-white font-bold text-xl">{estadisticas.totalTemas} temas</span>
       </p>
-
+      
       <!-- Badges animados -->
       <div class="flex flex-wrap justify-center gap-3 mb-10">
-        <div
-          class="px-5 py-2.5 bg-gradient-to-r from-cyan-400 to-cyan-600 rounded-full flex items-center gap-2 shadow-lg shadow-cyan-500/25 transform hover:scale-105 transition-transform"
-        >
+        <div class="px-5 py-2.5 bg-gradient-to-r from-cyan-400 to-cyan-600 rounded-full flex items-center gap-2 shadow-lg shadow-cyan-500/25 transform hover:scale-105 transition-transform">
           <span class="text-xl">📱</span>
           <span class="font-semibold">Interfaces</span>
         </div>
-        <div
-          class="px-5 py-2.5 bg-gradient-to-r from-green-400 to-green-600 rounded-full flex items-center gap-2 shadow-lg shadow-green-500/25 transform hover:scale-105 transition-transform"
-        >
+        <div class="px-5 py-2.5 bg-gradient-to-r from-green-400 to-green-600 rounded-full flex items-center gap-2 shadow-lg shadow-green-500/25 transform hover:scale-105 transition-transform">
           <span class="text-xl">💾</span>
           <span class="font-semibold">Acceso Datos</span>
         </div>
-        <div
-          class="px-5 py-2.5 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full flex items-center gap-2 shadow-lg shadow-purple-500/25 transform hover:scale-105 transition-transform"
-        >
+        <div class="px-5 py-2.5 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full flex items-center gap-2 shadow-lg shadow-purple-500/25 transform hover:scale-105 transition-transform">
           <span class="text-xl">⚙️</span>
           <span class="font-semibold">PSP</span>
         </div>
-        <div
-          class="px-5 py-2.5 bg-gradient-to-r from-violet-400 to-violet-600 rounded-full flex items-center gap-2 shadow-lg shadow-violet-500/25 transform hover:scale-105 transition-transform"
-        >
+        <div class="px-5 py-2.5 bg-gradient-to-r from-violet-400 to-violet-600 rounded-full flex items-center gap-2 shadow-lg shadow-violet-500/25 transform hover:scale-105 transition-transform">
           <span class="text-xl">🤖</span>
           <span class="font-semibold">IA</span>
         </div>
       </div>
 
       <!-- CTA principal -->
-      <a
-        href="#asignaturas"
+      <a 
+        href="#asignaturas" 
         class="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-2xl font-bold text-lg shadow-xl shadow-purple-500/30 hover:shadow-purple-500/50 transform hover:scale-105 transition-all"
       >
         <span>Comenzar Ahora</span>
-        <svg
-          class="w-5 h-5 animate-bounce"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        <svg class="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
         </svg>
       </a>
     </div>
+  </section>
+
+  <!-- Sección Especial: Exámenes -->
+  <section class="mb-12">
+    <a 
+      href="/quiz/examenes/examen-anterior"
+      class="card-glow group relative bg-gradient-to-br from-amber-900/50 to-yellow-900/50 backdrop-blur-xl rounded-3xl p-8 border-2 border-amber-500/50 hover:border-amber-400/70 transition-all duration-500 hover:transform hover:scale-[1.02] overflow-hidden flex items-center gap-6"
+    >
+      <div class={`absolute inset-0 bg-gradient-to-br ${examen.color} opacity-10 group-hover:opacity-20 transition-all duration-500`}></div>
+      
+      <span class="text-6xl relative z-10">{examen.icono}</span>
+      
+      <div class="flex-1 relative z-10">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="px-3 py-1 bg-amber-400/20 border border-amber-400/30 rounded-lg text-xs text-amber-200 uppercase tracking-wider font-bold">
+            Especial
+          </span>
+          <h3 class={`text-3xl font-bold bg-gradient-to-r ${examen.color} bg-clip-text text-transparent`}>
+            {examen.titulo}
+          </h3>
+        </div>
+        <p class="text-slate-300 mb-3">{examen.descripcion}</p>
+        <div class="flex items-center gap-4 text-sm text-slate-400">
+          <span>❓ <strong class="text-white">{preguntasExamenes['examen-anterior'].length}</strong> preguntas</span>
+        </div>
+      </div>
+      
+      <div class={`flex items-center gap-2 text-lg font-bold bg-gradient-to-r ${examen.color} bg-clip-text text-transparent relative z-10`}>
+        <span>Practicar</span>
+        <svg class="w-6 h-6 group-hover:translate-x-2 transition-transform text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+        </svg>
+      </div>
+    </a>
   </section>
 
   <!-- Cards de Asignaturas -->
   <section id="asignaturas" class="scroll-mt-8">
     <div class="text-center mb-10">
       <h2 class="text-3xl md:text-4xl font-bold mb-3">
-        <span
-          class="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent"
-        >
+        <span class="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
           Elige tu Asignatura
         </span>
       </h2>
-      <p class="text-slate-400 text-lg">
-        Cada asignatura contiene múltiples temas con preguntas específicas
-      </p>
+      <p class="text-slate-400 text-lg">Cada asignatura contiene múltiples temas con preguntas específicas</p>
     </div>
-
+    
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {
-        asignaturasConStats.map(({ asignatura, numTemas, numPreguntas }) => (
-          <AsignaturaCard
-            asignatura={asignatura}
-            numTemas={numTemas}
-            numPreguntas={numPreguntas}
-          />
-        ))
-      }
+      {asignaturasConStats.map(({ asignatura, numTemas, numPreguntas }) => (
+        <AsignaturaCard 
+          asignatura={asignatura}
+          numTemas={numTemas}
+          numPreguntas={numPreguntas}
+        />
+      ))}
     </div>
   </section>
 
   <!-- Sección de características mejorada -->
   <section class="mt-20">
-    <div
-      class="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-xl rounded-3xl p-10 border border-slate-700/50"
-    >
+    <div class="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-xl rounded-3xl p-10 border border-slate-700/50">
       <h2 class="text-2xl md:text-3xl font-bold mb-10 text-center">
-        <span
-          class="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent"
-        >
+        <span class="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
           ¿Por qué usar Quiz 2º DAM?
         </span>
       </h2>
-
+      
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div
-          class="text-center p-6 bg-slate-800/50 rounded-2xl border border-slate-700/50 hover:border-slate-600/50 transition-all hover:transform hover:scale-105"
-        >
+        <div class="text-center p-6 bg-slate-800/50 rounded-2xl border border-slate-700/50 hover:border-slate-600/50 transition-all hover:transform hover:scale-105">
           <span class="text-5xl mb-4 block">🎲</span>
           <h3 class="font-bold text-lg mb-2 text-white">Aleatorio</h3>
-          <p class="text-sm text-slate-400 leading-relaxed">
-            Las preguntas se mezclan en cada intento para un aprendizaje
-            efectivo
-          </p>
+          <p class="text-sm text-slate-400 leading-relaxed">Las preguntas se mezclan en cada intento para un aprendizaje efectivo</p>
         </div>
-        <div
-          class="text-center p-6 bg-slate-800/50 rounded-2xl border border-slate-700/50 hover:border-slate-600/50 transition-all hover:transform hover:scale-105"
-        >
+        <div class="text-center p-6 bg-slate-800/50 rounded-2xl border border-slate-700/50 hover:border-slate-600/50 transition-all hover:transform hover:scale-105">
           <span class="text-5xl mb-4 block">💡</span>
           <h3 class="font-bold text-lg mb-2 text-white">Explicaciones</h3>
-          <p class="text-sm text-slate-400 leading-relaxed">
-            Cada respuesta incluye una explicación detallada del concepto
-          </p>
+          <p class="text-sm text-slate-400 leading-relaxed">Cada respuesta incluye una explicación detallada del concepto</p>
         </div>
-        <div
-          class="text-center p-6 bg-slate-800/50 rounded-2xl border border-slate-700/50 hover:border-slate-600/50 transition-all hover:transform hover:scale-105"
-        >
+        <div class="text-center p-6 bg-slate-800/50 rounded-2xl border border-slate-700/50 hover:border-slate-600/50 transition-all hover:transform hover:scale-105">
           <span class="text-5xl mb-4 block">📊</span>
           <h3 class="font-bold text-lg mb-2 text-white">Estadísticas</h3>
-          <p class="text-sm text-slate-400 leading-relaxed">
-            Visualiza tu progreso por categoría y tema
-          </p>
+          <p class="text-sm text-slate-400 leading-relaxed">Visualiza tu progreso por categoría y tema</p>
         </div>
-        <div
-          class="text-center p-6 bg-slate-800/50 rounded-2xl border border-slate-700/50 hover:border-slate-600/50 transition-all hover:transform hover:scale-105"
-        >
+        <div class="text-center p-6 bg-slate-800/50 rounded-2xl border border-slate-700/50 hover:border-slate-600/50 transition-all hover:transform hover:scale-105">
           <span class="text-5xl mb-4 block">🔄</span>
           <h3 class="font-bold text-lg mb-2 text-white">Ilimitado</h3>
-          <p class="text-sm text-slate-400 leading-relaxed">
-            Practica todas las veces que necesites sin restricciones
-          </p>
+          <p class="text-sm text-slate-400 leading-relaxed">Practica todas las veces que necesites sin restricciones</p>
         </div>
       </div>
     </div>
@@ -198,46 +171,30 @@ const asignaturasConStats = asignaturas.map((asig) => {
   <!-- Stats Section -->
   <section class="mt-16 mb-8">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-      <div
-        class="text-center p-6 bg-slate-800/30 rounded-2xl border border-slate-700/30"
-      >
+      <div class="text-center p-6 bg-slate-800/30 rounded-2xl border border-slate-700/30">
         <span class="text-3xl mb-2 block">❓</span>
-        <p
-          class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent"
-        >
-          {estadisticas.totalPreguntas}
+        <p class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+          {totalPreguntasConExamenes}
         </p>
         <p class="text-slate-400 text-sm mt-1">Preguntas</p>
       </div>
-      <div
-        class="text-center p-6 bg-slate-800/30 rounded-2xl border border-slate-700/30"
-      >
+      <div class="text-center p-6 bg-slate-800/30 rounded-2xl border border-slate-700/30">
         <span class="text-3xl mb-2 block">🎓</span>
-        <p
-          class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent"
-        >
+        <p class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
           {estadisticas.totalAsignaturas}
         </p>
         <p class="text-slate-400 text-sm mt-1">Asignaturas</p>
       </div>
-      <div
-        class="text-center p-6 bg-slate-800/30 rounded-2xl border border-slate-700/30"
-      >
+      <div class="text-center p-6 bg-slate-800/30 rounded-2xl border border-slate-700/30">
         <span class="text-3xl mb-2 block">📚</span>
-        <p
-          class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent"
-        >
+        <p class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
           {estadisticas.totalTemas}
         </p>
         <p class="text-slate-400 text-sm mt-1">Temas</p>
       </div>
-      <div
-        class="text-center p-6 bg-slate-800/30 rounded-2xl border border-slate-700/30"
-      >
+      <div class="text-center p-6 bg-slate-800/30 rounded-2xl border border-slate-700/30">
         <span class="text-3xl mb-2 block">🔁</span>
-        <p
-          class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent"
-        >
+        <p class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
           ∞
         </p>
         <p class="text-slate-400 text-sm mt-1">Intentos</p>

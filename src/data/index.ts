@@ -51,6 +51,12 @@ import {
 } from "./ingles-dam/conditionals";
 import { preguntasRelatives, relativesInfo } from "./ingles-dam/relatives";
 
+// Imports de IA
+import { preguntasTema2PythonIa, tema2PythonIaInfo } from "./ia/tema2-python-ia";
+
+// Imports de Exámenes
+import { preguntasExamenAnterior } from "./examenes/examen_anterior";
+
 // ============================================================
 // TEMAS POR ASIGNATURA
 // ============================================================
@@ -223,6 +229,14 @@ const temasInglesDam: Tema[] = [
   },
 ];
 
+// Temas de IA
+const temasIA: Tema[] = [
+  {
+    ...tema2PythonIaInfo,
+    asignaturaId: "ia",
+  },
+];
+
 // ============================================================
 // ESTRUCTURA JERÁRQUICA: TEMAS AGRUPADOS POR ASIGNATURA
 // ============================================================
@@ -234,7 +248,7 @@ export const temasPorAsignatura: Record<string, Tema[]> = {
   sge: temasSGE,
   "ingles-dam": temasInglesDam,
   empleabilidad: temasEmpleabilidad,
-  ia: [],
+  ia: temasIA,
   multimedia: [],
   proyectos: [],
 };
@@ -276,6 +290,21 @@ const preguntasPorTema: Record<string, Record<string, Pregunta[]>> = {
     conditionals: preguntasConditionals,
     relatives: preguntasRelatives,
   },
+  ia: {
+    "tema2-python-ia": preguntasTema2PythonIa,
+  },
+};
+
+export const examen = {
+  id: "examen-anterior",
+  titulo: "Examen anterior",
+  descripcion: "Practica con preguntas de examen de convocatorias anteriores.",
+  color: "from-amber-400 to-yellow-500",
+  icono: "🧪",
+};
+
+export const preguntasExamenes: Record<string, Pregunta[]> = {
+  "examen-anterior": preguntasExamenAnterior,
 };
 
 // ============================================================

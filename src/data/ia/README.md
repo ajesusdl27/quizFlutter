@@ -2,4 +2,6 @@
 
 Esta carpeta contendrá las preguntas de Inteligencia Artificial.
 
-**Pendiente de añadir contenido.**
+## Contenido actual
+
+- `tema2-python-ia.ts`: Quiz del Tema 2 (Python para IA).
