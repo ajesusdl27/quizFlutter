@@ -53,7 +53,7 @@ export const asignaturas: Asignatura[] = [
     id: 'ia',
     nombre: 'Introducción a la Programación de IA',
     nombreCorto: 'IA',
-    descripcion: 'Fundamentos de inteligencia artificial y machine learning aplicado.',
+    descripcion: 'Cuestionarios de IA aplicada y machine learning, con foco en contenidos del 2º trimestre.',
     color: 'from-violet-500 to-purple-600',
     icono: '🤖',
   },
@@ -79,3 +79,4 @@ export const asignaturas: Asignatura[] = [
 export function obtenerAsignatura(id: string): Asignatura | undefined {
   return asignaturas.find(asig => asig.id === id);
 }
+
