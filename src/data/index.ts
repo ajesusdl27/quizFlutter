@@ -54,9 +54,6 @@ import { preguntasRelatives, relativesInfo } from "./ingles-dam/relatives";
 // Imports de IA
 import { preguntasTema2PythonIa, tema2PythonIaInfo } from "./ia/tema2-python-ia";
 
-// Imports de Exámenes
-import { preguntasExamenAnterior } from "./examenes/examen_anterior";
-
 // ============================================================
 // TEMAS POR ASIGNATURA
 // ============================================================
@@ -293,18 +290,6 @@ const preguntasPorTema: Record<string, Record<string, Pregunta[]>> = {
   ia: {
     "tema2-python-ia": preguntasTema2PythonIa,
   },
-};
-
-export const examen = {
-  id: "examen-anterior",
-  titulo: "Examen anterior",
-  descripcion: "Practica con preguntas de examen de convocatorias anteriores.",
-  color: "from-amber-400 to-yellow-500",
-  icono: "🧪",
-};
-
-export const preguntasExamenes: Record<string, Pregunta[]> = {
-  "examen-anterior": preguntasExamenAnterior,
 };
 
 // ============================================================

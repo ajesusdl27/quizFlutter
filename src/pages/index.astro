@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import AsignaturaCard from '../components/AsignaturaCard.astro';
-import { asignaturas, obtenerEstadisticasGlobales, obtenerEstadisticasAsignatura, examen, preguntasExamenes } from '../data';
+import { asignaturas, obtenerEstadisticasGlobales, obtenerEstadisticasAsignatura } from '../data';
 
 const estadisticas = obtenerEstadisticasGlobales();
 const asignaturasConStats = asignaturas.map(asig => {
@@ -12,8 +12,6 @@ const asignaturasConStats = asignaturas.map(asig => {
   };
 });
 
-// Añadir exámenes al conteo
-const totalPreguntasConExamenes = estadisticas.totalPreguntas + preguntasExamenes['examen-anterior'].length;
 ---
 
 <Layout title="Quiz 2º DAM - Test Interactivo para Desarrollo de Aplicaciones Multiplataforma">
@@ -40,7 +38,7 @@ const totalPreguntasConExamenes = estadisticas.totalPreguntas + preguntasExamene
       </p>
       
       <p class="text-lg text-slate-400 mb-10 max-w-2xl mx-auto">
-        Domina el curso con <span class="text-white font-bold text-xl">{totalPreguntasConExamenes}</span> preguntas 
+        Domina el curso con <span class="text-white font-bold text-xl">{estadisticas.totalPreguntas}</span> preguntas 
         distribuidas en <span class="text-white font-bold text-xl">{estadisticas.totalAsignaturas} asignaturas</span> 
         y <span class="text-white font-bold text-xl">{estadisticas.totalTemas} temas</span>
       </p>
@@ -76,40 +74,6 @@ const totalPreguntasConExamenes = estadisticas.totalPreguntas + preguntasExamene
         </svg>
       </a>
     </div>
-  </section>
-
-  <!-- Sección Especial: Exámenes -->
-  <section class="mb-12">
-    <a 
-      href="/quiz/examenes/examen-anterior"
-      class="card-glow group relative bg-gradient-to-br from-amber-900/50 to-yellow-900/50 backdrop-blur-xl rounded-3xl p-8 border-2 border-amber-500/50 hover:border-amber-400/70 transition-all duration-500 hover:transform hover:scale-[1.02] overflow-hidden flex items-center gap-6"
-    >
-      <div class={`absolute inset-0 bg-gradient-to-br ${examen.color} opacity-10 group-hover:opacity-20 transition-all duration-500`}></div>
-      
-      <span class="text-6xl relative z-10">{examen.icono}</span>
-      
-      <div class="flex-1 relative z-10">
-        <div class="flex items-center gap-3 mb-2">
-          <span class="px-3 py-1 bg-amber-400/20 border border-amber-400/30 rounded-lg text-xs text-amber-200 uppercase tracking-wider font-bold">
-            Especial
-          </span>
-          <h3 class={`text-3xl font-bold bg-gradient-to-r ${examen.color} bg-clip-text text-transparent`}>
-            {examen.titulo}
-          </h3>
-        </div>
-        <p class="text-slate-300 mb-3">{examen.descripcion}</p>
-        <div class="flex items-center gap-4 text-sm text-slate-400">
-          <span>❓ <strong class="text-white">{preguntasExamenes['examen-anterior'].length}</strong> preguntas</span>
-        </div>
-      </div>
-      
-      <div class={`flex items-center gap-2 text-lg font-bold bg-gradient-to-r ${examen.color} bg-clip-text text-transparent relative z-10`}>
-        <span>Practicar</span>
-        <svg class="w-6 h-6 group-hover:translate-x-2 transition-transform text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-        </svg>
-      </div>
-    </a>
   </section>
 
   <!-- Cards de Asignaturas -->
@@ -174,7 +138,7 @@ const totalPreguntasConExamenes = estadisticas.totalPreguntas + preguntasExamene
       <div class="text-center p-6 bg-slate-800/30 rounded-2xl border border-slate-700/30">
         <span class="text-3xl mb-2 block">❓</span>
         <p class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-          {totalPreguntasConExamenes}
+          {estadisticas.totalPreguntas}
         </p>
         <p class="text-slate-400 text-sm mt-1">Preguntas</p>
       </div>
