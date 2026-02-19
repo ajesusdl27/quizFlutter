@@ -54,6 +54,13 @@ import { preguntasRelatives, relativesInfo } from "./ingles-dam/relatives";
 // Imports de IA
 import { preguntasTema2PythonIa, tema2PythonIaInfo } from "./ia/tema2-python-ia";
 
+const preguntasUnidad8Firebase = preguntasUnidad8.filter(
+  (pregunta) => pregunta.categoria === "Firebase",
+);
+const preguntasUnidad8Apis = preguntasUnidad8.filter(
+  (pregunta) => pregunta.categoria !== "Firebase",
+);
+
 // ============================================================
 // TEMAS POR ASIGNATURA
 // ============================================================
@@ -129,11 +136,21 @@ const temasDesarrolloInterfaces: Tema[] = [
     asignaturaId: "desarrollo-interfaces",
   },
   {
-    id: "unidad8",
-    titulo: "APIs y Firebase",
+    id: "unidad8-apis",
+    titulo: "APIs",
     descripcion:
-      "Consumo de APIs REST, Firebase (Auth, Firestore), Riverpod y Freezed.",
-    temas: ["APIs REST", "Firebase Auth", "Firestore", "Riverpod", "Freezed"],
+      "Consumo de APIs REST y organización de estado/modelos con Riverpod y Freezed.",
+    temas: ["APIs REST", "Riverpod", "Freezed"],
+    color: "from-orange-500 to-red-600",
+    icono: "🌐",
+    asignaturaId: "desarrollo-interfaces",
+  },
+  {
+    id: "unidad8-firebase",
+    titulo: "Firebase",
+    descripcion:
+      "Autenticación, Firestore y servicios backend de Firebase en Flutter.",
+    temas: ["Firebase Auth", "Firestore", "Storage"],
     color: "from-orange-500 to-red-600",
     icono: "🔥",
     asignaturaId: "desarrollo-interfaces",
@@ -261,7 +278,8 @@ const preguntasPorTema: Record<string, Record<string, Pregunta[]>> = {
     unidad5: preguntasUnidad5,
     unidad6: preguntasUnidad6,
     unidad7: preguntasUnidad7,
-    unidad8: preguntasUnidad8,
+    "unidad8-apis": preguntasUnidad8Apis,
+    "unidad8-firebase": preguntasUnidad8Firebase,
   },
   "acceso-datos": {
     psp: preguntasPsp,
