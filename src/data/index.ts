@@ -33,6 +33,8 @@ import { preguntasStripe, stripeInfo } from "./sge/stripe";
 import { preguntasCoolify, coolifyInfo } from "./sge/coolify";
 import { preguntas20_100, tema20_100Info } from "./sge/20-100";
 import { preguntas21_100, tema21_100Info } from "./sge/21-100";
+import { preguntas41_100, tema41_100Info } from "./sge/41-100";
+import { preguntas81_100, tema81_100Info } from "./sge/81-100";
 
 // Imports de Empleabilidad
 import { preguntasTema7, tema7Info } from "./empleabilidad/tema7";
@@ -219,6 +221,14 @@ const temasSGE: Tema[] = [
     ...tema21_100Info,
     asignaturaId: "sge",
   },
+  {
+    ...tema41_100Info,
+    asignaturaId: "sge",
+  },
+  {
+    ...tema81_100Info,
+    asignaturaId: "sge",
+  },
 ];
 
 // Temas de Empleabilidad
@@ -306,6 +316,8 @@ const preguntasPorTema: Record<string, Record<string, Pregunta[]>> = {
     coolify: preguntasCoolify,
     "20-100": preguntas20_100,
     "21-100": preguntas21_100,
+    "41-100": preguntas41_100,
+    "81-100": preguntas81_100,
   },
   empleabilidad: {
     tema7: preguntasTema7,
