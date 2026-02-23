@@ -265,7 +265,7 @@ export const preguntas20_100: Pregunta[] = [
 
 export const tema20_100Info: Tema = {
   id: '20-100',
-  titulo: '20/100',
+  titulo: '1/5',
   descripcion: 'Preguntas 1 a 20 del bloque SGE (Cloudinary, Astro, Coolify, MCP, Supabase y Stripe).',
   temas: ['Cloudinary', 'Astro', 'Coolify', 'MCP', 'Supabase', 'Stripe', 'CRM'],
   color: 'from-sky-500 to-blue-600',

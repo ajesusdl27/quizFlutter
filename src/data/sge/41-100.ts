@@ -265,7 +265,7 @@ export const preguntas41_100: Pregunta[] = [
 
 export const tema41_100Info: Tema = {
   id: '41-100',
-  titulo: '41/100',
+  titulo: '3/5',
   descripcion: 'Preguntas 41 a 60 del bloque SGE (Supabase, Stripe, MCP, CRM y Astro).',
   temas: ['Supabase', 'Stripe', 'MCP', 'CRM', 'Astro', 'Diseño', 'Integración'],
   color: 'from-fuchsia-500 to-purple-700',
