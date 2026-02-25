@@ -54,6 +54,20 @@ import { preguntasRelatives, relativesInfo } from "./ingles-dam/relatives";
 // Imports de IA
 import { preguntasTema2PythonIa, tema2PythonIaInfo } from "./ia/tema2-python-ia";
 
+// Imports de PSP
+import {
+  bloque1FundamentosRedInfo,
+  preguntasBloque1FundamentosRed,
+} from "./psp/bloque-1-fundamentos-red";
+import {
+  bloque2PilaTcpIpInfo,
+  preguntasBloque2PilaTcpIp,
+} from "./psp/bloque-2-pila-tcp-ip";
+import {
+  bloque3JavaSocketsInfo,
+  preguntasBloque3JavaSockets,
+} from "./psp/bloque-3-java-sockets";
+
 const preguntasUnidad8Firebase = preguntasUnidad8.filter(
   (pregunta) => pregunta.categoria === "Firebase",
 );
@@ -251,6 +265,22 @@ const temasIA: Tema[] = [
   },
 ];
 
+// Temas de PSP
+const temasPSP: Tema[] = [
+  {
+    ...bloque1FundamentosRedInfo,
+    asignaturaId: "psp",
+  },
+  {
+    ...bloque2PilaTcpIpInfo,
+    asignaturaId: "psp",
+  },
+  {
+    ...bloque3JavaSocketsInfo,
+    asignaturaId: "psp",
+  },
+];
+
 // ============================================================
 // ESTRUCTURA JERÁRQUICA: TEMAS AGRUPADOS POR ASIGNATURA
 // ============================================================
@@ -258,7 +288,7 @@ const temasIA: Tema[] = [
 export const temasPorAsignatura: Record<string, Tema[]> = {
   "desarrollo-interfaces": temasDesarrolloInterfaces,
   "acceso-datos": temasAccesoDatos,
-  psp: [],
+  psp: temasPSP,
   sge: temasSGE,
   "ingles-dam": temasInglesDam,
   empleabilidad: temasEmpleabilidad,
@@ -285,6 +315,11 @@ const preguntasPorTema: Record<string, Record<string, Pregunta[]>> = {
     psp: preguntasPsp,
     hibernate: preguntasHibernate,
     "orm-jpa": preguntasOrmJpa,
+  },
+  psp: {
+    "bloque-1-fundamentos-red": preguntasBloque1FundamentosRed,
+    "bloque-2-pila-tcp-ip": preguntasBloque2PilaTcpIp,
+    "bloque-3-java-sockets": preguntasBloque3JavaSockets,
   },
   sge: {
     "astro-fundamentos": preguntasAstroFundamentos,
@@ -320,6 +355,7 @@ export { asignaturas };
 export const todosLosTemas: Tema[] = [
   ...temasDesarrolloInterfaces,
   ...temasAccesoDatos,
+  ...temasPSP,
 ];
 
 // ============================================================
